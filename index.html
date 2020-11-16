@@ -7,12 +7,14 @@
   
   <title>Jayson</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="这里是一个大三程序狗的博客，喜欢跳舞，rap，健身，在这里会记录自己的生活以及学习">
+<meta property="og:type" content="website">
 <meta property="og:title" content="Jayson">
 <meta property="og:url" content="http://example.com/index.html">
 <meta property="og:site_name" content="Jayson">
+<meta property="og:description" content="这里是一个大三程序狗的博客，喜欢跳舞，rap，健身，在这里会记录自己的生活以及学习">
 <meta property="og:locale" content="en_US">
-<meta property="article:author" content="Jayson">
+<meta property="article:author" content="艾森-杰尼">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="Jayson" type="application/atom+xml">
@@ -64,6 +66,82 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-lilst" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/11/16/lilst/" class="article-date">
+  <time datetime="2020-11-16T09:32:51.000Z" itemprop="datePublished">2020-11-16</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/python/">python</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/11/16/lilst/">list的总结</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<p>List数据类型是python中最为常用的数据类型，在这里总结一下对list的理解</p>
+<p>列表数据类型是python中最为常用的数据类型，在这里总结一下对list的理解，以及常用的操作</p>
+<h2 id="List"><a href="#List" class="headerlink" title="List"></a>List</h2><h4 id="数据类型的理解"><a href="#数据类型的理解" class="headerlink" title="数据类型的理解"></a>数据类型的理解</h4><p>列表类型与c++的数组和STL的vector十分像，且列表中的元素类型不是固定的，十分有意思。与字符串的索引一样，列表索引从0开始。列表可以进行截取、组合等。</p>
+<h3 id="列表的创建"><a href="#列表的创建" class="headerlink" title="列表的创建"></a>列表的创建</h3><p>list=[]//创建空列表</p>
+<p>list = [‘physics’, ‘chemistry’, 1997, 2000]</p>
+<p>list=list(range())</p>
+<h3 id="列表的基本操作"><a href="#列表的基本操作" class="headerlink" title="列表的基本操作"></a>列表的基本操作</h3><h4 id="添加元素"><a href="#添加元素" class="headerlink" title="添加元素"></a>添加元素</h4><p>在列表的最后一位添加元素</p>
+<p>list.append(obj)</p>
+<h4 id="插入元素"><a href="#插入元素" class="headerlink" title="插入元素"></a>插入元素</h4><p>list.insert(index,obj)</p>
+<h4 id="移除元素"><a href="#移除元素" class="headerlink" title="移除元素"></a>移除元素</h4><p>移除列表中一个元素，并返回列表的值，默认是最后一位</p>
+<p>list.pop([index=-1])</p>
+<h4 id="列表取反"><a href="#列表取反" class="headerlink" title="列表取反"></a>列表取反</h4><p>list.reverse()</p>
+<h4 id="列表排序"><a href="#列表排序" class="headerlink" title="列表排序"></a>列表排序</h4><p>该方法没有返回值，但是会对列表的对象进行排序。</p>
+<p>list.sort(cmp=None, key=None, reverse=False)</p>
+<h5 id="降序"><a href="#降序" class="headerlink" title="降序"></a>降序</h5><p>vowels.sort(reverse=True)</p>
+<h5 id="升序"><a href="#升序" class="headerlink" title="升序"></a>升序</h5><p>升序是默认的即：list.sort()</p>
+<p>vowels.sort(reverse=False)</p>
+<h3 id="其他列表操作"><a href="#其他列表操作" class="headerlink" title="其他列表操作"></a>其他列表操作</h3><ol>
+<li>cmp(list1,list2)</li>
+<li>len(list)</li>
+<li>max(list)</li>
+<li>min(list)</li>
+<li>list(seq)//将元组转换为列表</li>
+<li>list.count(obj)//统计某个元素在列表中出现的次数</li>
+<li>list.index(obj)//从列表中找出某个值第一个匹配项的索引位置</li>
+<li>list.remove(obj)//移除列表中某个值的第一个匹配项</li>
+</ol>
+<h3 id="列表的遍历"><a href="#列表的遍历" class="headerlink" title="列表的遍历"></a>列表的遍历</h3><ol>
+<li>for i,j in list:</li>
+<li>for i in range(n):</li>
+</ol>
+<hr>
+<p>以上是一些列表的基本操作，一般其实用不到特别复杂的操作，未完待续……….</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/11/16/lilst/" data-id="ckhkckacg00009ku20b61cx53" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/" rel="tag">python</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-numpy" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/11/15/numpy/" class="article-date">
@@ -90,7 +168,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>在数值计算中numpy特别使用，所以做一下关于numpy用法的记录</p>
+        <p>[toc]</p>
+<p>在数值计算中numpy特别使用，所以做一下关于numpy用法的记录</p>
 <h3 id="numpy"><a href="#numpy" class="headerlink" title="numpy"></a>numpy</h3><p>import numpy as np</p>
 <h4 id="ARRAY的创建"><a href="#ARRAY的创建" class="headerlink" title="ARRAY的创建"></a>ARRAY的创建</h4><h5 id="np-array"><a href="#np-array" class="headerlink" title="np.array()"></a>np.array()</h5><p>e.g. np.array([[1,1,1],</p>
 <p>​                        [[1,1,1])</p>
@@ -387,6 +466,10 @@
       <ul>
         
           <li>
+            <a href="/2020/11/16/lilst/">list的总结</a>
+          </li>
+        
+          <li>
             <a href="/2020/11/15/numpy/">numpy</a>
           </li>
         
@@ -414,7 +497,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2020 Jayson<br>
+      &copy; 2020 艾森-杰尼<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
