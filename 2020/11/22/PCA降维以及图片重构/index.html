@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>PCA降维以及图片重构 | Jayson</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="数值计算中有一个大作业是关于PCA的降维以及重构的，这里就总结一下，感觉还是蛮实用的。 PCA概念PCA即主成分分析方法，是一种使用最广泛的数据降维算法。PCA的主要思想是将n维特征映射到k维上，这k维是全新的正交特征也被称为主成分，是在原有n维特征的基础上重新构造出来的k维特征。 PCA思想 数据中的信息是分布不均匀的，有些地方数据多，有些地方数据少 所以将一些少的信息去掉，对于原始数据是没有">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PCA降维以及图片重构">
+<meta property="og:url" content="http://example.com/2020/11/22/PCA%E9%99%8D%E7%BB%B4%E4%BB%A5%E5%8F%8A%E5%9B%BE%E7%89%87%E9%87%8D%E6%9E%84/index.html">
+<meta property="og:site_name" content="Jayson">
+<meta property="og:description" content="数值计算中有一个大作业是关于PCA的降维以及重构的，这里就总结一下，感觉还是蛮实用的。 PCA概念PCA即主成分分析方法，是一种使用最广泛的数据降维算法。PCA的主要思想是将n维特征映射到k维上，这k维是全新的正交特征也被称为主成分，是在原有n维特征的基础上重新构造出来的k维特征。 PCA思想 数据中的信息是分布不均匀的，有些地方数据多，有些地方数据少 所以将一些少的信息去掉，对于原始数据是没有">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-11-22T08:50:34.000Z">
+<meta property="article:modified_time" content="2020-11-22T12:54:56.937Z">
+<meta property="article:author" content="艾森-杰尼">
+<meta property="article:tag" content="matlab">
+<meta property="article:tag" content="算法">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Jayson" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Jayson</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-PCA降维以及图片重构" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/11/22/PCA%E9%99%8D%E7%BB%B4%E4%BB%A5%E5%8F%8A%E5%9B%BE%E7%89%87%E9%87%8D%E6%9E%84/" class="article-date">
+  <time datetime="2020-11-22T08:50:34.000Z" itemprop="datePublished">2020-11-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      PCA降维以及图片重构
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<p>数值计算中有一个大作业是关于PCA的降维以及重构的，这里就总结一下，感觉还是蛮实用的。</p>
+<h4 id="PCA概念"><a href="#PCA概念" class="headerlink" title="PCA概念"></a>PCA概念</h4><p>PCA即主成分分析方法，是一种使用最广泛的数据降维算法。PCA的主要思想是将n维特征映射到k维上，这k维是全新的正交特征也被称为主成分，是在原有n维特征的基础上重新构造出来的k维特征。</p>
+<h4 id="PCA思想"><a href="#PCA思想" class="headerlink" title="PCA思想"></a>PCA思想</h4><ol>
+<li>数据中的信息是分布不均匀的，有些地方数据多，有些地方数据少</li>
+<li>所以将一些少的信息去掉，对于原始数据是没有很大影响的，即抓住主要矛盾，忽略次要矛盾</li>
+<li>经过推导可以知道协方差矩阵的特征值代表了数据包含的信息量，所以可以取大的特征值，舍弃掉小的从而完成降维</li>
+</ol>
+<h4 id="PCA降维步骤"><a href="#PCA降维步骤" class="headerlink" title="PCA降维步骤"></a>PCA降维步骤</h4><ol>
+<li>去平均值(即去中心化)，即每一位特征减去各自的平均值。</li>
+<li>计算协方差矩阵$\frac{1}{n}XX^T$</li>
+<li>求协方差矩阵$\frac{1}{n}XX^T$的特征值和特征向量</li>
+<li>对特征值从大到小排序，选择其中最大的k个。然后将其对应的k个特征向量分别作为行向量组成特征向量矩阵P。</li>
+<li>将数据转换到k个特征向量构建的新空间中，即Y=PX。</li>
+</ol>
+<h4 id="图像重构"><a href="#图像重构" class="headerlink" title="图像重构"></a>图像重构</h4><p>将上面的Y乘上P.T加上去中心化减去的值得到重构的图像</p>
+<p>即：<br>$$<br>reconstruction=Y*P’+meanvalue<br>$$</p>
+<h3 id="实验过程"><a href="#实验过程" class="headerlink" title="实验过程"></a>实验过程</h3><ol>
+<li>读取训练集图像，每一个人脸图像以一个列向量的形式存在，所以需要将每个图像重构成列向量</li>
+</ol>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> <span class="built_in">j</span>=<span class="number">1</span>:img_num <span class="comment">%逐一读取图像</span></span><br><span class="line">    image_name = img_path_list(<span class="built_in">j</span>).name;<span class="comment">%图像名</span></span><br><span class="line">    img = imread(strcat(file_path,image_name));              </span><br><span class="line">    img = imresize(img, <span class="number">0.2</span>, <span class="string">&#x27;nearest&#x27;</span>);</span><br><span class="line">     [irow,icol] = <span class="built_in">size</span>(img);<span class="comment">%得到图片大小</span></span><br><span class="line">    temp = <span class="built_in">reshape</span>(img,irow*icol,<span class="number">1</span>);<span class="comment">%将二维图片转为一维向量</span></span><br><span class="line">    <span class="comment">% 每张图片的信息做为V的一列  </span></span><br><span class="line">    Q(:,<span class="built_in">j</span>)=temp;</span><br><span class="line">    imgTrain=[imgTrain,temp];</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>读取完人脸数据后，将数据零均值化，即人脸向量减去平均值脸向量。然后求出这组数据的协方差矩阵的特征值向量和特征值向量,这些单位特征向量可以形成一个特征空间，然后把原图像向量向这个特征空间中投影，就可以得到特征脸</li>
+</ol>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">m = <span class="built_in">mean</span>(imgTrain,<span class="number">2</span>); <span class="comment">% 平均图像/行平均</span></span><br><span class="line">Train_Number = <span class="built_in">size</span>(imgTrain,<span class="number">2</span>);<span class="comment">%列数</span></span><br><span class="line"><span class="comment">%计算机每一张图片到均值图像的方差</span></span><br><span class="line">A = [];  </span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span> = <span class="number">1</span> : Train_Number<span class="comment">%对每一列</span></span><br><span class="line">    temp = double(imgTrain(:,<span class="built_in">i</span>))-m; <span class="comment">%每一张图与均值的差异</span></span><br><span class="line">    A = [A temp]; <span class="comment">%差矩阵</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="comment">%得到A的协方差矩阵并转置得到L</span></span><br><span class="line">L = A&#x27;*A; <span class="comment">% L是协方差矩阵C=A*A&#x27;的转置</span></span><br><span class="line"><span class="comment">%得到特征值与特征向量</span></span><br><span class="line">[V,D] = eig(L); <span class="comment">%对角线上的元素是L|C的特征值.V:以特征向量为列的满秩矩阵，D：特征值对角矩阵。即L*V = V*D.</span></span><br><span class="line">L_eig_vec = [];<span class="comment">%特征值向量</span></span><br><span class="line"><span class="built_in">max</span>=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span> = <span class="number">1</span> : <span class="built_in">size</span>(V,<span class="number">2</span>)<span class="comment">%对每个特征向量   </span></span><br><span class="line">   <span class="built_in">max</span>=<span class="built_in">max</span>+D(<span class="built_in">i</span>,<span class="built_in">i</span>);</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">sum=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span> = <span class="built_in">size</span>(V,<span class="number">2</span>):<span class="number">-1</span>:<span class="built_in">size</span>(V,<span class="number">2</span>)<span class="number">-2</span><span class="comment">%对每个特征向量      </span></span><br><span class="line">    L_eig_vec = [L_eig_vec V(:,<span class="built_in">i</span>)]*<span class="number">0</span>;<span class="comment">%集中对应的特征向量</span></span><br><span class="line">    sum=sum+D(<span class="built_in">i</span>,<span class="built_in">i</span>);</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span> = <span class="built_in">size</span>(V,<span class="number">2</span>)<span class="number">-3</span>:<span class="number">-1</span>:<span class="built_in">size</span>(V,<span class="number">2</span>)<span class="number">-9</span><span class="comment">%对每个特征向量      </span></span><br><span class="line">    L_eig_vec = [L_eig_vec V(:,<span class="built_in">i</span>)]*<span class="number">0.05</span>;<span class="comment">%集中对应的特征向量</span></span><br><span class="line">    sum=sum+D(<span class="built_in">i</span>,<span class="built_in">i</span>);</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span> = <span class="built_in">size</span>(V,<span class="number">2</span>)<span class="number">-10</span>:<span class="number">-1</span>:<span class="number">1</span><span class="comment">%对每个特征向量      </span></span><br><span class="line">    L_eig_vec = [L_eig_vec V(:,<span class="built_in">i</span>)];<span class="comment">%集中对应的特征向量</span></span><br><span class="line">    sum=sum+D(<span class="built_in">i</span>,<span class="built_in">i</span>);</span><br><span class="line">    <span class="keyword">if</span>(sum/<span class="built_in">max</span>&gt;<span class="number">0.99</span>)</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">Eigenfaces = A * L_eig_vec; <span class="comment">% 计算机协方差矩阵C的特征向量，</span></span><br><span class="line">                            <span class="comment">%得到降维了的特征,A为每一张图像与均值图像的差构成的矩阵，</span></span><br><span class="line">TrainProjectedImages = [];<span class="comment">%映射图像</span></span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span> = <span class="number">1</span> : img_num<span class="comment">%对于每一个训练特征</span></span><br><span class="line">    temp = Eigenfaces&#x27;*double(Q(:,<span class="built_in">i</span>));</span><br><span class="line">    TrainProjectedImages = [TrainProjectedImages temp];  <span class="comment">%得到 L_eig_vec;</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>人脸重建</li>
+</ol>
+<p>人脸重建实验的目的是为了测试特征脸所携带的人脸信息。由于特征值的大小代表了其所对应的特征向量所携带的信息量，通过将最大的一些特征值对应的特征向量叠加就可以获得原图像中的大部分信息量，也就是所谓的主成分。这里先将所有特征值按从大到小的顺序排列。通过叠加特征向量的方式，就可以得到一组对原人脸的逼近特征脸。而将特征值加起来，正是总的信息量，也可以求出重构误差。</p>
+<ol start="4">
+<li>人脸识别</li>
+</ol>
+<p>人脸识别即给出一个待识别的在测试集中的图像，计算该图像与已经有的人脸即训练集中的人脸的距离，距离最小的则认为该图片的人脸。</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">1</span>:Testcols</span><br><span class="line">    mImgTestCur = TestProjectedImages(:,<span class="built_in">i</span>);</span><br><span class="line">    vDisMin = <span class="number">9999999999999</span>;</span><br><span class="line">    vClassMin = <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">for</span> <span class="built_in">j</span>=<span class="number">1</span>:Traincols</span><br><span class="line">        mImgTrainCur = TrainProjectedImages(:,<span class="built_in">j</span>);</span><br><span class="line">        mDis = mImgTestCur-mImgTrainCur;</span><br><span class="line">        mDis = mDis.^<span class="number">2</span>;</span><br><span class="line">        vDis = <span class="built_in">sqrt</span>(sum(mDis));</span><br><span class="line">        <span class="keyword">if</span> vDis&lt;vDisMin</span><br><span class="line">            vDisMin = vDis;</span><br><span class="line">		    m=<span class="built_in">j</span>;</span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    name1=img_path_list_train(m).name;</span><br><span class="line">   name1 =name1(<span class="number">6</span>:<span class="number">7</span>);<span class="comment">%取名字的6-7位置的字符</span></span><br><span class="line">    name2=img_path_list_test(<span class="built_in">i</span>).name;</span><br><span class="line">     name2 =name2(<span class="number">6</span>:<span class="number">7</span>);</span><br><span class="line">    <span class="keyword">if</span> name2==name1</span><br><span class="line">	count=count+<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>未完待续…</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/11/22/PCA%E9%99%8D%E7%BB%B4%E4%BB%A5%E5%8F%8A%E5%9B%BE%E7%89%87%E9%87%8D%E6%9E%84/" data-id="ckht4jbyu0000y4u2h6fl8gl0" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/matlab/" rel="tag">matlab</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2020/11/22/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88dfs/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">深度优先dfs</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9C%AA%E6%9D%A5%E6%96%B9%E5%90%91/">未来方向</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/matlab/" rel="tag">matlab</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/matlab/" style="font-size: 10px;">matlab</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 15px;">算法</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/11/22/PCA%E9%99%8D%E7%BB%B4%E4%BB%A5%E5%8F%8A%E5%9B%BE%E7%89%87%E9%87%8D%E6%9E%84/">PCA降维以及图片重构</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/22/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88dfs/">深度优先dfs</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/19/postdsa/">关于考研</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/19/%E9%93%BE%E8%A1%A8in-python/">链表in python</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/16/lilst/">基础数据结构list</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 艾森-杰尼<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

@@ -66,6 +66,157 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-PCA降维以及图片重构" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/11/22/PCA%E9%99%8D%E7%BB%B4%E4%BB%A5%E5%8F%8A%E5%9B%BE%E7%89%87%E9%87%8D%E6%9E%84/" class="article-date">
+  <time datetime="2020-11-22T08:50:34.000Z" itemprop="datePublished">2020-11-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/11/22/PCA%E9%99%8D%E7%BB%B4%E4%BB%A5%E5%8F%8A%E5%9B%BE%E7%89%87%E9%87%8D%E6%9E%84/">PCA降维以及图片重构</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<p>数值计算中有一个大作业是关于PCA的降维以及重构的，这里就总结一下，感觉还是蛮实用的。</p>
+<h4 id="PCA概念"><a href="#PCA概念" class="headerlink" title="PCA概念"></a>PCA概念</h4><p>PCA即主成分分析方法，是一种使用最广泛的数据降维算法。PCA的主要思想是将n维特征映射到k维上，这k维是全新的正交特征也被称为主成分，是在原有n维特征的基础上重新构造出来的k维特征。</p>
+<h4 id="PCA思想"><a href="#PCA思想" class="headerlink" title="PCA思想"></a>PCA思想</h4><ol>
+<li>数据中的信息是分布不均匀的，有些地方数据多，有些地方数据少</li>
+<li>所以将一些少的信息去掉，对于原始数据是没有很大影响的，即抓住主要矛盾，忽略次要矛盾</li>
+<li>经过推导可以知道协方差矩阵的特征值代表了数据包含的信息量，所以可以取大的特征值，舍弃掉小的从而完成降维</li>
+</ol>
+<h4 id="PCA降维步骤"><a href="#PCA降维步骤" class="headerlink" title="PCA降维步骤"></a>PCA降维步骤</h4><ol>
+<li>去平均值(即去中心化)，即每一位特征减去各自的平均值。</li>
+<li>计算协方差矩阵$\frac{1}{n}XX^T$</li>
+<li>求协方差矩阵$\frac{1}{n}XX^T$的特征值和特征向量</li>
+<li>对特征值从大到小排序，选择其中最大的k个。然后将其对应的k个特征向量分别作为行向量组成特征向量矩阵P。</li>
+<li>将数据转换到k个特征向量构建的新空间中，即Y=PX。</li>
+</ol>
+<h4 id="图像重构"><a href="#图像重构" class="headerlink" title="图像重构"></a>图像重构</h4><p>将上面的Y乘上P.T加上去中心化减去的值得到重构的图像</p>
+<p>即：<br>$$<br>reconstruction=Y*P’+meanvalue<br>$$</p>
+<h3 id="实验过程"><a href="#实验过程" class="headerlink" title="实验过程"></a>实验过程</h3><ol>
+<li>读取训练集图像，每一个人脸图像以一个列向量的形式存在，所以需要将每个图像重构成列向量</li>
+</ol>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> <span class="built_in">j</span>=<span class="number">1</span>:img_num <span class="comment">%逐一读取图像</span></span><br><span class="line">    image_name = img_path_list(<span class="built_in">j</span>).name;<span class="comment">%图像名</span></span><br><span class="line">    img = imread(strcat(file_path,image_name));              </span><br><span class="line">    img = imresize(img, <span class="number">0.2</span>, <span class="string">&#x27;nearest&#x27;</span>);</span><br><span class="line">     [irow,icol] = <span class="built_in">size</span>(img);<span class="comment">%得到图片大小</span></span><br><span class="line">    temp = <span class="built_in">reshape</span>(img,irow*icol,<span class="number">1</span>);<span class="comment">%将二维图片转为一维向量</span></span><br><span class="line">    <span class="comment">% 每张图片的信息做为V的一列  </span></span><br><span class="line">    Q(:,<span class="built_in">j</span>)=temp;</span><br><span class="line">    imgTrain=[imgTrain,temp];</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>读取完人脸数据后，将数据零均值化，即人脸向量减去平均值脸向量。然后求出这组数据的协方差矩阵的特征值向量和特征值向量,这些单位特征向量可以形成一个特征空间，然后把原图像向量向这个特征空间中投影，就可以得到特征脸</li>
+</ol>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">m = <span class="built_in">mean</span>(imgTrain,<span class="number">2</span>); <span class="comment">% 平均图像/行平均</span></span><br><span class="line">Train_Number = <span class="built_in">size</span>(imgTrain,<span class="number">2</span>);<span class="comment">%列数</span></span><br><span class="line"><span class="comment">%计算机每一张图片到均值图像的方差</span></span><br><span class="line">A = [];  </span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span> = <span class="number">1</span> : Train_Number<span class="comment">%对每一列</span></span><br><span class="line">    temp = double(imgTrain(:,<span class="built_in">i</span>))-m; <span class="comment">%每一张图与均值的差异</span></span><br><span class="line">    A = [A temp]; <span class="comment">%差矩阵</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="comment">%得到A的协方差矩阵并转置得到L</span></span><br><span class="line">L = A&#x27;*A; <span class="comment">% L是协方差矩阵C=A*A&#x27;的转置</span></span><br><span class="line"><span class="comment">%得到特征值与特征向量</span></span><br><span class="line">[V,D] = eig(L); <span class="comment">%对角线上的元素是L|C的特征值.V:以特征向量为列的满秩矩阵，D：特征值对角矩阵。即L*V = V*D.</span></span><br><span class="line">L_eig_vec = [];<span class="comment">%特征值向量</span></span><br><span class="line"><span class="built_in">max</span>=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span> = <span class="number">1</span> : <span class="built_in">size</span>(V,<span class="number">2</span>)<span class="comment">%对每个特征向量   </span></span><br><span class="line">   <span class="built_in">max</span>=<span class="built_in">max</span>+D(<span class="built_in">i</span>,<span class="built_in">i</span>);</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">sum=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span> = <span class="built_in">size</span>(V,<span class="number">2</span>):<span class="number">-1</span>:<span class="built_in">size</span>(V,<span class="number">2</span>)<span class="number">-2</span><span class="comment">%对每个特征向量      </span></span><br><span class="line">    L_eig_vec = [L_eig_vec V(:,<span class="built_in">i</span>)]*<span class="number">0</span>;<span class="comment">%集中对应的特征向量</span></span><br><span class="line">    sum=sum+D(<span class="built_in">i</span>,<span class="built_in">i</span>);</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span> = <span class="built_in">size</span>(V,<span class="number">2</span>)<span class="number">-3</span>:<span class="number">-1</span>:<span class="built_in">size</span>(V,<span class="number">2</span>)<span class="number">-9</span><span class="comment">%对每个特征向量      </span></span><br><span class="line">    L_eig_vec = [L_eig_vec V(:,<span class="built_in">i</span>)]*<span class="number">0.05</span>;<span class="comment">%集中对应的特征向量</span></span><br><span class="line">    sum=sum+D(<span class="built_in">i</span>,<span class="built_in">i</span>);</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span> = <span class="built_in">size</span>(V,<span class="number">2</span>)<span class="number">-10</span>:<span class="number">-1</span>:<span class="number">1</span><span class="comment">%对每个特征向量      </span></span><br><span class="line">    L_eig_vec = [L_eig_vec V(:,<span class="built_in">i</span>)];<span class="comment">%集中对应的特征向量</span></span><br><span class="line">    sum=sum+D(<span class="built_in">i</span>,<span class="built_in">i</span>);</span><br><span class="line">    <span class="keyword">if</span>(sum/<span class="built_in">max</span>&gt;<span class="number">0.99</span>)</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">Eigenfaces = A * L_eig_vec; <span class="comment">% 计算机协方差矩阵C的特征向量，</span></span><br><span class="line">                            <span class="comment">%得到降维了的特征,A为每一张图像与均值图像的差构成的矩阵，</span></span><br><span class="line">TrainProjectedImages = [];<span class="comment">%映射图像</span></span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span> = <span class="number">1</span> : img_num<span class="comment">%对于每一个训练特征</span></span><br><span class="line">    temp = Eigenfaces&#x27;*double(Q(:,<span class="built_in">i</span>));</span><br><span class="line">    TrainProjectedImages = [TrainProjectedImages temp];  <span class="comment">%得到 L_eig_vec;</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>人脸重建</li>
+</ol>
+<p>人脸重建实验的目的是为了测试特征脸所携带的人脸信息。由于特征值的大小代表了其所对应的特征向量所携带的信息量，通过将最大的一些特征值对应的特征向量叠加就可以获得原图像中的大部分信息量，也就是所谓的主成分。这里先将所有特征值按从大到小的顺序排列。通过叠加特征向量的方式，就可以得到一组对原人脸的逼近特征脸。而将特征值加起来，正是总的信息量，也可以求出重构误差。</p>
+<ol start="4">
+<li>人脸识别</li>
+</ol>
+<p>人脸识别即给出一个待识别的在测试集中的图像，计算该图像与已经有的人脸即训练集中的人脸的距离，距离最小的则认为该图片的人脸。</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">1</span>:Testcols</span><br><span class="line">    mImgTestCur = TestProjectedImages(:,<span class="built_in">i</span>);</span><br><span class="line">    vDisMin = <span class="number">9999999999999</span>;</span><br><span class="line">    vClassMin = <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">for</span> <span class="built_in">j</span>=<span class="number">1</span>:Traincols</span><br><span class="line">        mImgTrainCur = TrainProjectedImages(:,<span class="built_in">j</span>);</span><br><span class="line">        mDis = mImgTestCur-mImgTrainCur;</span><br><span class="line">        mDis = mDis.^<span class="number">2</span>;</span><br><span class="line">        vDis = <span class="built_in">sqrt</span>(sum(mDis));</span><br><span class="line">        <span class="keyword">if</span> vDis&lt;vDisMin</span><br><span class="line">            vDisMin = vDis;</span><br><span class="line">		    m=<span class="built_in">j</span>;</span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    name1=img_path_list_train(m).name;</span><br><span class="line">   name1 =name1(<span class="number">6</span>:<span class="number">7</span>);<span class="comment">%取名字的6-7位置的字符</span></span><br><span class="line">    name2=img_path_list_test(<span class="built_in">i</span>).name;</span><br><span class="line">     name2 =name2(<span class="number">6</span>:<span class="number">7</span>);</span><br><span class="line">    <span class="keyword">if</span> name2==name1</span><br><span class="line">	count=count+<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>未完待续…</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/11/22/PCA%E9%99%8D%E7%BB%B4%E4%BB%A5%E5%8F%8A%E5%9B%BE%E7%89%87%E9%87%8D%E6%9E%84/" data-id="ckht4jbyu0000y4u2h6fl8gl0" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/matlab/" rel="tag">matlab</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-深度优先dfs" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/11/22/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88dfs/" class="article-date">
+  <time datetime="2020-11-21T16:57:02.000Z" itemprop="datePublished">2020-11-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/11/22/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88dfs/">深度优先dfs</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<p>d</p>
+<p>之所以总结一下dfs，是因为刷python题目时候遇到一个题，单词搜索问题，类似于dfs思想的题目，不太会做，然后就总结一下</p>
+<h2 id="什么是DFS"><a href="#什么是DFS" class="headerlink" title="什么是DFS"></a>什么是DFS</h2><p>Depth First Search英文的缩写，翻译过来就是“深度优先搜索”。</p>
+<p>深度优先遍历的主要思想就是：首先以一个未被访问过的顶点作为起始顶点，沿当前顶点的边走到未访问过的顶点；当没有未访问过的顶点时，则回到上一个顶点，继续试探访问别的顶点，直到所有的顶点都被访问。</p>
+<p>沿着某条路径遍历直到末端，然后回溯，再沿着另一条进行同样的遍历，直到所有的顶点都被访问过为止。</p>
+<p>即：不撞南墙不回头</p>
+<h3 id="算法过程"><a href="#算法过程" class="headerlink" title="算法过程"></a>算法过程</h3><ol>
+<li>任意选择一个起点v，访问该顶点</li>
+<li>沿深度方向，依次遍历未访问邻节点</li>
+</ol>
+<p>tips：每次访问后都要将访问的vist[]变成1</p>
+<h5 id="递归伪代码"><a href="#递归伪代码" class="headerlink" title="递归伪代码"></a>递归伪代码</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">DFS(dep,、、、）        &#x2F;&#x2F;dep代表目前DFS的深度</span><br><span class="line">&#123;</span><br><span class="line">    if(找到解 || 走不下去)&#123;</span><br><span class="line">        、、、     &#x2F;&#x2F;在此处进行相应的操作</span><br><span class="line">        return ;</span><br><span class="line">    &#125;</span><br><span class="line">    枚举下一种情况，DFS（dep+1,、、、）</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="非递归伪代码"><a href="#非递归伪代码" class="headerlink" title="非递归伪代码"></a>非递归伪代码</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">bool visited[MAXNODE];      &#x2F;&#x2F;顶点的访问标识数组</span><br><span class="line">void DFSInit(Graph G)&#123;</span><br><span class="line">    for(i&#x3D;0; i&lt;G.VertexNum; i++)&#123;</span><br><span class="line">        visited[i] &#x3D; false;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void DFS(Graph G,int v)&#123;  &#x2F;&#x2F;v:顶点数组中的序号</span><br><span class="line">    Visit[v];  visited[v]&#x3D;true;</span><br><span class="line">    w &#x3D; FirstAdj(G,v);    &#x2F;&#x2F;返回：v的第一个邻接点，0表示无邻接点</span><br><span class="line">    while(w!&#x3D;0)&#123;   </span><br><span class="line">        if(!visited[w]&#123;</span><br><span class="line">            DFS(G,w);   &#x2F;&#x2F;参数传递w-&gt;v</span><br><span class="line">        &#125;</span><br><span class="line">        w &#x3D; NextAdj(G,v,w);   &#x2F;&#x2F;返回：v的在邻接点w后的邻接点，0表示不存在</span><br><span class="line">    &#125;</span><br><span class="line">&#125;   </span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="https://img-blog.csdn.net/20180327185247135?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NoZW5zYW53YQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p>
+<ul>
+<li>其中一种DFS序列：DFS(G,v1) = (v1,v2,v3,v6,v5,v7,v4,v8,v9)</li>
+</ul>
+<h5 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h5><p>dfs即找准了一条路，如果满足判定成功条件或者失败条件（撞南墙）就返回上一个节点，再从这个节点继续找下一个，再撞再回溯。</p>
+<h5 id="单词搜索问题"><a href="#单词搜索问题" class="headerlink" title="单词搜索问题"></a>单词搜索问题</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dfs</span>(<span class="params">self,i,j,cmap,word</span>):</span></span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(word)==<span class="number">0</span>:</span><br><span class="line">            <span class="comment">#撞南墙</span></span><br><span class="line">            <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">        <span class="comment">#撞南墙</span></span><br><span class="line">        <span class="keyword">elif</span> i&gt;=<span class="built_in">len</span>(cmap) <span class="keyword">or</span> i&lt;<span class="number">0</span> <span class="keyword">or</span> j&lt;<span class="number">0</span> <span class="keyword">or</span> j&gt;=<span class="built_in">len</span>(cmap[<span class="number">0</span>]) <span class="keyword">or</span> word[<span class="number">0</span>]!=cmap[i][j]:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        temp=cmap[i][j]</span><br><span class="line">        cmap[i][j]=<span class="string">&#x27;#&#x27;</span></span><br><span class="line">        res =self.dfs(i+<span class="number">1</span>,j,cmap,word[<span class="number">1</span>:]) <span class="keyword">or</span> self.dfs(i<span class="number">-1</span>, j, cmap, word[<span class="number">1</span>:]) <span class="keyword">or</span> self.dfs(i, j+<span class="number">1</span>, cmap, word[<span class="number">1</span>:]) <span class="keyword">or</span> self.dfs(i, j<span class="number">-1</span>, cmap, word[<span class="number">1</span>:])</span><br><span class="line">        <span class="comment">#四种方向，其中有一种return True那这个节点即return True</span></span><br><span class="line">        cmap[i][j]=temp</span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
+
+<hr>
+<hr>
+<p>未完待续……………………………….</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/11/22/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88dfs/" data-id="ckht4jbz70003y4u2ev192zmj" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-postdsa" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/11/19/postdsa/" class="article-date">
@@ -246,7 +397,7 @@
 <li>for i in range(n):</li>
 </ol>
 <hr>
-<p>以上是一些列表的基本操作，一般其实用不到特别复杂的操作，未完待续……….</p>
+<p>以上是一些列表的基本操作，一般其实用不到特别复杂的操作，未完待续………</p>
 
       
     </div>
@@ -460,7 +611,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9C%AA%E6%9D%A5%E6%96%B9%E5%90%91/">未来方向</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9C%AA%E6%9D%A5%E6%96%B9%E5%90%91/">未来方向</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a></li></ul>
     </div>
   </div>
 
@@ -470,7 +621,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/matlab/" rel="tag">matlab</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li></ul>
     </div>
   </div>
 
@@ -480,7 +631,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/python/" style="font-size: 10px;">python</a>
+      <a href="/tags/matlab/" style="font-size: 10px;">matlab</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 15px;">算法</a>
     </div>
   </div>
 
@@ -502,6 +653,14 @@
       <ul>
         
           <li>
+            <a href="/2020/11/22/PCA%E9%99%8D%E7%BB%B4%E4%BB%A5%E5%8F%8A%E5%9B%BE%E7%89%87%E9%87%8D%E6%9E%84/">PCA降维以及图片重构</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/22/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88dfs/">深度优先dfs</a>
+          </li>
+        
+          <li>
             <a href="/2020/11/19/postdsa/">关于考研</a>
           </li>
         
@@ -511,14 +670,6 @@
         
           <li>
             <a href="/2020/11/16/lilst/">基础数据结构list</a>
-          </li>
-        
-          <li>
-            <a href="/2020/11/15/numpy/">numpy</a>
-          </li>
-        
-          <li>
-            <a href="/2020/10/26/first-article/">first_article</a>
           </li>
         
       </ul>
