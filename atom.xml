@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2020-11-23T17:00:17.435Z</updated>
+  <updated>2020-11-24T05:30:43.101Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>关于考研2</title>
+    <link href="http://example.com/2020/11/24/%E5%85%B3%E4%BA%8E%E8%80%83%E7%A0%942/"/>
+    <id>http://example.com/2020/11/24/%E5%85%B3%E4%BA%8E%E8%80%83%E7%A0%942/</id>
+    <published>2020-11-24T05:16:33.000Z</published>
+    <updated>2020-11-24T05:30:43.101Z</updated>
+    
+    <content type="html"><![CDATA[<hr><p>几天前的话，回了家一趟，和我姐姐聊了一下，我姐姐现在大四，还有一个月就要考研初试了，她和我讲了很多关于考研的事情，我基本也是确定了之后就是要考研了。</p><hr><p>剑指2021 12月份~</p><hr><h3 id="时间安排"><a href="#时间安排" class="headerlink" title="时间安排"></a>时间安排</h3><h5 id="寒假前"><a href="#寒假前" class="headerlink" title="寒假前"></a>寒假前</h5><ol><li>先确定好自己要考研的院校</li><li>那些要考的专业科目开始看，但不是刷题很深地看，就是过一下，总结到blog，然后再自己敲代码去实现</li><li>开始背单词？好久没有学习英语了</li><li>还有这学期地课也不要落下了，开始准备复习</li></ol><h5 id="寒假后"><a href="#寒假后" class="headerlink" title="寒假后"></a>寒假后</h5><p>按照那个时间表跟着规划去做题，刷题，听课！</p><p>感觉就是和高考差不都，一轮复习，又一轮复习的</p><hr><h4 id="考研科目"><a href="#考研科目" class="headerlink" title="考研科目"></a>考研科目</h4><h5 id="英语"><a href="#英语" class="headerlink" title="英语"></a>英语</h5><p>100分</p><h5 id="数学"><a href="#数学" class="headerlink" title="数学"></a>数学</h5><p>150分</p><h6 id="政治"><a href="#政治" class="headerlink" title="政治"></a>政治</h6><p>100分 </p><h6 id="专业课："><a href="#专业课：" class="headerlink" title="专业课："></a>专业课：</h6><p>150分</p><p>数据结构45分，计算机组成原理45分，操作系统35分，计算机网络25分；</p><p>试卷题型结构：单项选择题，80分（40小题，每小题2分）；综合题，70分；</p><hr><p>加油~愿韶华不负</p><p>​                                                                      JAYSON</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;hr&gt;
+&lt;p&gt;几天前的话，回了家一趟，和我姐姐聊了一下，我姐姐现在大四，还有一个月就要考研初试了，她和我讲了很多关于考研的事情，我基本也是确定了之后就是要考研了。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;剑指2021 12月份~&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&quot;时间安排&quot;&gt;&lt;a href=&quot;</summary>
+      
+    
+    
+    
+    <category term="未来方向" scheme="http://example.com/categories/%E6%9C%AA%E6%9D%A5%E6%96%B9%E5%90%91/"/>
+    
+    
+    <category term="未来方向" scheme="http://example.com/tags/%E6%9C%AA%E6%9D%A5%E6%96%B9%E5%90%91/"/>
+    
+  </entry>
   
   <entry>
     <title>动态规划</title>
@@ -104,6 +133,32 @@
     <title>关于考研</title>
     <link href="http://example.com/2020/11/19/postdsa/"/>
     <id>http://example.com/2020/11/19/postdsa/</id>
+    <published>2020-11-19T07:24:48.000Z</published>
+    <updated>2020-11-19T07:43:46.425Z</updated>
+    
+    <content type="html"><![CDATA[<hr><p>d</p><p>现在是2020.11.19，距离大四毕业还有一年半的时间，还有半年我就要面临考研以及还是就业的选择，说实话，我现在是十分犹豫的。</p><hr><p>我之所以想考研其实很大部分原因是因为感觉自己其实并没有准备好直接就进入职场经历那雨打风吹，而且读完研究生的薪资待遇确实是和本科生不同，可能是为了“钱途”吧，本来打算保不了研就直接从业的我产生了读研的想法。</p><hr><h4 id="关于之后这大半年"><a href="#关于之后这大半年" class="headerlink" title="关于之后这大半年"></a>关于之后这大半年</h4><p>其实计算机这门学科，只要你肯花时间去专研，琢磨，总结，深入，不停写码肯定可以收获不小的成功，哪怕不能做到最最最顶尖，但肯定是高于水准线之上很多的。我的想法是：</p><ol><li>不断地刷题，刷leetcode，现在我把matrix上字节跳动的题目刷完就去刷leetcode了</li><li>总结，将知识点分类，或者觉得有用的东西弄到我的blog上，并且不断地美化自己的blog。</li><li>总结计网，计组，操作系统，计网的知识点到blog上，并且深入地做一些相关地研究或者实验去加深巩固，而且因为这学期是有计网2这个科目的，所以计网是放在第一优先级的</li><li>做一些实际的项目练手</li></ol><h4 id="考研科目"><a href="#考研科目" class="headerlink" title="考研科目"></a>考研科目</h4><h5 id="英语"><a href="#英语" class="headerlink" title="英语"></a>英语</h5><p>100分</p><h5 id="数学"><a href="#数学" class="headerlink" title="数学"></a>数学</h5><p>150分</p><h6 id="政治"><a href="#政治" class="headerlink" title="政治"></a>政治</h6><p>100分 </p><h6 id="专业课："><a href="#专业课：" class="headerlink" title="专业课："></a>专业课：</h6><p>150分</p><p>数据结构45分，计算机组成原理45分，操作系统35分，计算机网络25分；</p><p>试卷题型结构：单项选择题，80分（40小题，每小题2分）；综合题，70分；</p><hr><p>加油~愿韶华不负</p><p>​                                                                   JAYSON</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;hr&gt;
+&lt;p&gt;d&lt;/p&gt;
+&lt;p&gt;现在是2020.11.19，距离大四毕业还有一年半的时间，还有半年我就要面临考研以及还是就业的选择，说实话，我现在是十分犹豫的。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;我之所以想考研其实很大部分原因是因为感觉自己其实并没有准备好直接就进入职场经历那雨打风吹，而</summary>
+      
+    
+    
+    
+    <category term="未来方向" scheme="http://example.com/categories/%E6%9C%AA%E6%9D%A5%E6%96%B9%E5%90%91/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>关于考研</title>
+    <link href="http://example.com/2020/11/19/%E5%85%B3%E4%BA%8E%E8%80%83%E7%A0%94/"/>
+    <id>http://example.com/2020/11/19/%E5%85%B3%E4%BA%8E%E8%80%83%E7%A0%94/</id>
     <published>2020-11-19T07:24:48.000Z</published>
     <updated>2020-11-19T07:43:46.425Z</updated>
     
