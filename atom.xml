@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2020-11-28T17:51:25.614Z</updated>
+  <updated>2020-11-30T17:28:43.406Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,19 +17,46 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>插值</title>
-    <link href="http://example.com/2020/11/29/%E6%8F%92%E5%80%BC/"/>
-    <id>http://example.com/2020/11/29/%E6%8F%92%E5%80%BC/</id>
-    <published>2020-11-28T17:30:30.000Z</published>
-    <updated>2020-11-28T17:51:25.614Z</updated>
+    <title>数值积分</title>
+    <link href="http://example.com/2020/11/30/%E6%95%B0%E5%80%BC%E7%A7%AF%E5%88%86/"/>
+    <id>http://example.com/2020/11/30/%E6%95%B0%E5%80%BC%E7%A7%AF%E5%88%86/</id>
+    <published>2020-11-30T15:54:33.000Z</published>
+    <updated>2020-11-30T17:28:43.406Z</updated>
     
-    <content type="html"><![CDATA[<hr>]]></content>
+    <content type="html"><![CDATA[<hr><h1 id="数值积分"><a href="#数值积分" class="headerlink" title="数值积分"></a>数值积分</h1><p>当遇到无法解析求解的定积分，可以使用数值积分来计算</p><h3 id="思想"><a href="#思想" class="headerlink" title="思想"></a>思想</h3><p>从公式：<br>$$<br>I=\int_a^bf(x)dx=(b-a)f(\xi)<br>$$<br>开始，可以看到$f(\xi)$平均高度是个关键点，从这里着手，提供一种近似算法将其取代</p><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>取适当的节点$x_k$并用$f(x_k)$的加权平均值座作为$f(\xi)$的近似值<br>$$<br>I=\int_a^bf(x)dx\approx \sum_{k=0}^nA_kf(x_k)=I_n<br>$$<br>$x_k$：求积节点</p><p>$A_k$：求积系数，$A_k$仅与$X_k$有关</p><p>$R(f)=I-I_n$  ：求积余项</p><h4 id="m次代数精度"><a href="#m次代数精度" class="headerlink" title="m次代数精度"></a>m次代数精度</h4><p>精度准确即是$\int_a^bf(x)dx$ 与 $\sum_{k=0}^nA_kf(x_k)$相等，代数精度越高，求积公式则越好</p><ol><li>对所有次数不超过m的多项式都精确成立</li><li>至少对一个m+1次多项式不精确成立</li></ol><h5 id="充要条件"><a href="#充要条件" class="headerlink" title="充要条件"></a>充要条件</h5><p>求积公式具有m次代数精度充要条件是该求积公式：</p><ol><li>对$x^k(k=0,1,2,…,m)$精确成立</li><li>对$x^{m+1}$不精确成立</li></ol>]]></content>
     
     
       
       
     <summary type="html">&lt;hr&gt;
-</summary>
+&lt;h1 id=&quot;数值积分&quot;&gt;&lt;a href=&quot;#数值积分&quot; class=&quot;headerlink&quot; title=&quot;数值积分&quot;&gt;&lt;/a&gt;数值积分&lt;/h1&gt;&lt;p&gt;当遇到无法解析求解的定积分，可以使用数值积分来计算&lt;/p&gt;
+&lt;h3 id=&quot;思想&quot;&gt;&lt;a href=&quot;#思想&quot; c</summary>
+      
+    
+    
+    
+    <category term="数值计算" scheme="http://example.com/categories/%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97/"/>
+    
+    
+    <category term="数值计算" scheme="http://example.com/tags/%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>插值</title>
+    <link href="http://example.com/2020/11/29/%E6%8F%92%E5%80%BC/"/>
+    <id>http://example.com/2020/11/29/%E6%8F%92%E5%80%BC/</id>
+    <published>2020-11-28T17:30:30.000Z</published>
+    <updated>2020-11-29T15:49:04.887Z</updated>
+    
+    <content type="html"><![CDATA[<hr><p>数值计算学习中有学到插值，总结一下插值，和拟合的区别是拟合是找到总体上来说离给出的已知点最近的曲线，插值则是求得的曲线是满足都经过已知点的，就很牛逼。</p><h1 id="插值"><a href="#插值" class="headerlink" title="插值"></a>插值</h1><h3 id="一些定义以及性质"><a href="#一些定义以及性质" class="headerlink" title="一些定义以及性质"></a>一些定义以及性质</h3><ol><li><p>插值函数g(x):<br>$$<br>g(x_i)=f(x_i),i=0,1,….,n<br>$$</p></li><li><p>插值节点：上面的{$x_i$}</p></li><li><p>定理：n+1个$x_i$不相同节点的n次插值多项式存在且唯一</p></li></ol><h3 id="拉格朗日插值"><a href="#拉格朗日插值" class="headerlink" title="拉格朗日插值"></a>拉格朗日插值</h3><h5 id="理解"><a href="#理解" class="headerlink" title="理解"></a>理解</h5><p>朗日朗日插值它的插值多项式在非它的插值节点$x_i$的$l(x_j)$都取0</p><p>缺点：节点变化的时候拉格朗日插值需要重新构造</p><h5 id="插值函数"><a href="#插值函数" class="headerlink" title="插值函数"></a>插值函数</h5><p>$$<br>g(x)=f(x_0)l_0(x)+f(x_1)l_1(x)+…+f(x_n)l_n(x)<br>$$</p><p>​                                                               #$l_i(x)$是次数不超过n次的多项式<br>$$<br>对于g(x_i),l_i(x)=1，l_j(x)=0,j\neq i<br>$$</p><p>Lagrange基函数：<br>$$<br>l_i(x)=\frac{(x-x_0)(x-x_{i-1})(x-x_{i+1})(x-x_n)}{(x_i-x_0)(x_i-x_{i-1})(x_i-x_{i+1})(x_i-x_n)}<br>$$<br>Lagrange插值：<br>$$<br>L_n(x)=f(x_0)l_0(x)+f(x_1)l_1(x)+…+f(x_n)l)n(x)<br>$$</p><h6 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h6><p><img src="C:\Users\WIN10\AppData\Roaming\Typora\typora-user-images\image-20201129212906862.png" alt="image-20201129212906862"></p><h4 id="分段拉格朗日插值"><a href="#分段拉格朗日插值" class="headerlink" title="分段拉格朗日插值"></a>分段拉格朗日插值</h4><h5 id="分段线性拉格朗日插值"><a href="#分段线性拉格朗日插值" class="headerlink" title="分段线性拉格朗日插值"></a>分段线性拉格朗日插值</h5><p>差不多就是两两相邻的节点形成一个拉格朗日插值，x在哪个区间就使用哪个拉格朗日插值<br>$$<br>L^{(k)}(x)=y_kl_k(x)+y_{k+1}l_{k+1}(x),k=0,1,2…n-1<br>$$</p><p>$$<br>=y_k\frac{x-x_{k+1}}{x_k-x_{k+1}}+y_{k+1}\frac{x-x_{k}}{x_{x+1}-x_{k}}<br>$$</p><p>L(x)=$L^{(k)}(x)$                  ，        当$x_k\leqslant x&lt;x_{k+1}$</p><p>内插：插在里面 ………………</p><p>外插：$x^*\notin[x_0,x_n]$</p><h5 id="分段二次插值"><a href="#分段二次插值" class="headerlink" title="分段二次插值"></a>分段二次插值</h5><img src="C:\Users\WIN10\AppData\Roaming\Typora\typora-user-images\image-20201129230549180.png" alt="image-20201129230549180" style="zoom:80%;" />]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;hr&gt;
+&lt;p&gt;数值计算学习中有学到插值，总结一下插值，和拟合的区别是拟合是找到总体上来说离给出的已知点最近的曲线，插值则是求得的曲线是满足都经过已知点的，就很牛逼。&lt;/p&gt;
+&lt;h1 id=&quot;插值&quot;&gt;&lt;a href=&quot;#插值&quot; class=&quot;headerlink&quot; title=&quot;</summary>
       
     
     
