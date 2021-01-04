@@ -1,0 +1,233 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>计网2复习 | Jayson</title><meta name="keywords" content="计网"><meta name="author" content="jayson"><meta name="copyright" content="jayson"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="d IPv6的基础RFCIPv6协议的主要特征 IPv6协议具有巨大的地址空间 IPv6具有自动将IP地址分配给用户的功能  协议首部的简化和改进  IPv6对ICMP进行了改进  IPv6的分段只发生在源结点  IPSec是IPv6的重要组成部分  提供服务质量支持  IPv6协议对移动性提供内置的支持  IPv6路由简化  IPv6的首部IPv6的首部路由器转发IPv6分组的过程 IPv6扩">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计网2复习">
+<meta property="og:url" content="http://example.com/2021/01/01/%E8%AE%A1%E7%BD%912%E5%A4%8D%E4%B9%A0/index.html">
+<meta property="og:site_name" content="Jayson">
+<meta property="og:description" content="d IPv6的基础RFCIPv6协议的主要特征 IPv6协议具有巨大的地址空间 IPv6具有自动将IP地址分配给用户的功能  协议首部的简化和改进  IPv6对ICMP进行了改进  IPv6的分段只发生在源结点  IPSec是IPv6的重要组成部分  提供服务质量支持  IPv6协议对移动性提供内置的支持  IPv6路由简化  IPv6的首部IPv6的首部路由器转发IPv6分组的过程 IPv6扩">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg">
+<meta property="article:published_time" content="2021-01-01T11:59:35.000Z">
+<meta property="article:modified_time" content="2021-01-01T17:21:22.020Z">
+<meta property="article:author" content="jayson">
+<meta property="article:tag" content="计网">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2021/01/01/%E8%AE%A1%E7%BD%912%E5%A4%8D%E4%B9%A0/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  ClickShowText: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-01-02 01:21:22'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+   if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+  const autoChangeMode = 'false'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }const asideStatus = saveToLocal.get('aside-status')
+if (asideStatus !== undefined) {
+   if (asideStatus === 'hide') {
+     document.documentElement.classList.add('hide-aside')
+   } else {
+     document.documentElement.classList.remove('hide-aside')
+   }
+}})()</script><meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="Jayson" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/null" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">27</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">14</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">13</div></a></div></div></div><hr/></div></div><div id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Jayson</a></span><span id="menus"><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><h1 class="post-title">计网2复习</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2021-01-01T11:59:35.000Z" title="Created 2021-01-01 19:59:35">2021-01-01</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2021-01-01T17:21:22.020Z" title="Updated 2021-01-02 01:21:22">2021-01-02</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E8%AE%A1%E7%BD%91/">计网</a></span></div><div class="meta-secondline"> <span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><hr>
+<p>d</p>
+<h1 id="IPv6的基础"><a href="#IPv6的基础" class="headerlink" title="IPv6的基础"></a>IPv6的基础</h1><h3 id="RFC"><a href="#RFC" class="headerlink" title="RFC"></a>RFC</h3><h3 id="IPv6协议的主要特征"><a href="#IPv6协议的主要特征" class="headerlink" title="IPv6协议的主要特征"></a>IPv6协议的主要特征</h3><ol>
+<li>IPv6协议具有巨大的地址空间</li>
+<li><p>IPv6具有自动将IP地址分配给用户的功能</p>
+</li>
+<li><p>协议首部的简化和改进</p>
+</li>
+<li>IPv6对ICMP进行了改进 </li>
+<li>IPv6的分段只发生在源结点 </li>
+<li>IPSec是IPv6的重要组成部分 </li>
+<li>提供服务质量支持 </li>
+<li>IPv6协议对移动性提供内置的支持 </li>
+<li>IPv6路由简化</li>
+</ol>
+<h1 id="IPv6的首部"><a href="#IPv6的首部" class="headerlink" title="IPv6的首部"></a>IPv6的首部</h1><h3 id="IPv6的首部-1"><a href="#IPv6的首部-1" class="headerlink" title="IPv6的首部"></a>IPv6的首部</h3><p>路由器转发IPv6分组的过程</p>
+<h3 id="IPv6扩展首部"><a href="#IPv6扩展首部" class="headerlink" title="IPv6扩展首部"></a>IPv6扩展首部</h3><ol>
+<li>逐跳选项扩展首部</li>
+</ol>
+<p>从源结点到目的结点的路由上的每个结点，即每个转发分 组的网络结点（路由器）都检查逐跳选项中的信息。</p>
+<p>选项类型，选项数据长度，选项数据</p>
+<p>Pad1和PadN填充选项</p>
+<p>超大有效荷载选项</p>
+<p>路由器告警选项</p>
+<ol>
+<li>路由扩展首部</li>
+</ol>
+<p>用来指出IPv6分组在从源结点到目的结点的过程中，需 要经过的一个或多个网络中间结点（路由器）,即源路由</p>
+<ol>
+<li>分段扩展首部</li>
+</ol>
+<p>IPv6协议只允许源结点对分组进行分段，简化 了中间结点对分组的处理</p>
+<ol>
+<li>身份认证扩展首部</li>
+</ol>
+<p>用于实现数据的完整性和对分组来源的确认，完整 性保证了数据在传输过程中没有被篡改过，分组来 源的确认分组确实来自于源地址所标识的接口</p>
+<ol>
+<li>封装安全荷载扩展首部</li>
+</ol>
+<p>提供端到端的数据加密功能，以及无连接的完整性服务、 数据源认证、抗重发服务，还提供对通信流机密性的限制</p>
+<ol>
+<li>目的选项扩展首部</li>
+</ol>
+<p>携带只需要目的站点检验的可选信息，为中间结点 或目的结点指定分组的转发参数</p>
+<h3 id="IPv6协议与相邻层协议的关系"><a href="#IPv6协议与相邻层协议的关系" class="headerlink" title="IPv6协议与相邻层协议的关系"></a>IPv6协议与相邻层协议的关系</h3><ol>
+<li>高层协议使用的一些规则和上层校验和计 算</li>
+</ol>
+<p>IPv6伪首部格式：IPv6源地址、IPv6目的地址、上层协议包 长度、下一个首部字段</p>
+<p> IPv6伪首部与上层协议构成校验和计算的内容</p>
+<ol>
+<li><p>IPv6协议与底层网络协议</p>
+</li>
+<li><p>IPv6与链路层MTU</p>
+</li>
+</ol>
+<p>(1).IPv6支持使用ICMPv6的分组过大报文的路径 MTU发现过程</p>
+<p>(2).允许通过采用分段扩展首部的方法，传输长度 超过1280字节的IPv6数据包。</p>
+<ol>
+<li><p>底层网络对IPv6协议的封装</p>
+</li>
+<li><p>IPv6CP的配置选项</p>
+</li>
+</ol>
+<p>接口标识符,IPv6压缩协议</p>
+<p>若已经用IPv6CP选项协商了接口标识符，可以不 用进行IPv6无状态地址配置协议中的重复地址检测</p>
+<p>若没有协商成功有效的接口标识符，则可以采用手 工配置接口标识符</p>
+<ol>
+<li>IPv6与帧中继</li>
+</ol>
+<h1 id="IPv6地址结构"><a href="#IPv6地址结构" class="headerlink" title="IPv6地址结构"></a>IPv6地址结构</h1><p>IPv6地址长度是128位，包括16个字节</p>
+<h2 id="地址格式分类"><a href="#地址格式分类" class="headerlink" title="地址格式分类"></a>地址格式分类</h2><h3 id="首选格式"><a href="#首选格式" class="headerlink" title="首选格式"></a>首选格式</h3><p>就是正常表示的形式，分为8个位段X:X:X:X:X:X:X:X</p>
+<h3 id="压缩表示格式"><a href="#压缩表示格式" class="headerlink" title="压缩表示格式"></a>压缩表示格式</h3><ol>
+<li>规定每个位段至少有一个数字，如“0000” 简写为“0”</li>
+<li>多个连续位段0用两个冒号（双冒号）表示，简写为“::”，定双冒号在地址中只能出现一次</li>
+</ol>
+<h3 id="内嵌IPv4地址的IPv6地址格式"><a href="#内嵌IPv4地址的IPv6地址格式" class="headerlink" title="内嵌IPv4地址的IPv6地址格式"></a>内嵌IPv4地址的IPv6地址格式</h3><p>的最低32位可以用于表示IPv4地址，X:X:X:X:X:X:d.d.d.d</p>
+<ul>
+<li>IPv4映射的IPv6地址</li>
+</ul>
+<p>用于将IPV4节点表示为IPV6节点。允许IPV6 应用程序直接与IPV4应用程序通信</p>
+<h2 id="IPv6前缀"><a href="#IPv6前缀" class="headerlink" title="IPv6前缀"></a>IPv6前缀</h2><p>IPv6地址被分成两个部分：子网前缀和接口标识符</p>
+<p>e.g.4030:0:0:0:C9B4:FF12:48BC:1A27/60</p>
+<h2 id="IPv6地址分类"><a href="#IPv6地址分类" class="headerlink" title="IPv6地址分类"></a>IPv6地址分类</h2><p>单播、多播、任播和特殊地址</p>
+<h2 id="取消广播地址的原因"><a href="#取消广播地址的原因" class="headerlink" title="取消广播地址的原因"></a>取消广播地址的原因</h2><p>同一网络链路上的大量广播意味着该链路上的每个 结点都必须处理所有广播，但是其中绝大部分结点 最终将忽略该广播。</p>
+<p>IPv6对此的解决办法是使用一个“所有结点”多播 地址来替代那些必须使用广播的情况。</p>
+<h2 id="IPv6单播地址"><a href="#IPv6单播地址" class="headerlink" title="IPv6单播地址"></a>IPv6单播地址</h2></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">jayson</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://example.com/2021/01/01/%E8%AE%A1%E7%BD%912%E5%A4%8D%E4%B9%A0/">http://example.com/2021/01/01/%E8%AE%A1%E7%BD%912%E5%A4%8D%E4%B9%A0/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E8%AE%A1%E7%BD%91/">计网</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2021/01/03/%E5%AF%86%E7%A0%81%E5%AD%A6%E5%A4%8D%E4%B9%A0/"><img class="prev-cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">密码学复习</div></div></a></div><div class="next-post pull-right"><a href="/2020/12/30/%E9%BB%91%E5%AE%A2%E8%AE%A4%E8%AF%86/"><img class="next-cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">黑客认识</div></div></a></div></nav></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" src="/null" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">jayson</div><div class="author-info__description">这里是一个要考研的大三程序狗的博客，喜欢跳舞，饶舌音乐，健身，在这里会记录自己的生活以及学习</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">27</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">14</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">13</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div></div><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="card-content"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#IPv6%E7%9A%84%E5%9F%BA%E7%A1%80"><span class="toc-number">1.</span> <span class="toc-text">IPv6的基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#RFC"><span class="toc-number">1.0.1.</span> <span class="toc-text">RFC</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IPv6%E5%8D%8F%E8%AE%AE%E7%9A%84%E4%B8%BB%E8%A6%81%E7%89%B9%E5%BE%81"><span class="toc-number">1.0.2.</span> <span class="toc-text">IPv6协议的主要特征</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#IPv6%E7%9A%84%E9%A6%96%E9%83%A8"><span class="toc-number">2.</span> <span class="toc-text">IPv6的首部</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#IPv6%E7%9A%84%E9%A6%96%E9%83%A8-1"><span class="toc-number">2.0.1.</span> <span class="toc-text">IPv6的首部</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IPv6%E6%89%A9%E5%B1%95%E9%A6%96%E9%83%A8"><span class="toc-number">2.0.2.</span> <span class="toc-text">IPv6扩展首部</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IPv6%E5%8D%8F%E8%AE%AE%E4%B8%8E%E7%9B%B8%E9%82%BB%E5%B1%82%E5%8D%8F%E8%AE%AE%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="toc-number">2.0.3.</span> <span class="toc-text">IPv6协议与相邻层协议的关系</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#IPv6%E5%9C%B0%E5%9D%80%E7%BB%93%E6%9E%84"><span class="toc-number">3.</span> <span class="toc-text">IPv6地址结构</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%B0%E5%9D%80%E6%A0%BC%E5%BC%8F%E5%88%86%E7%B1%BB"><span class="toc-number">3.1.</span> <span class="toc-text">地址格式分类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A6%96%E9%80%89%E6%A0%BC%E5%BC%8F"><span class="toc-number">3.1.1.</span> <span class="toc-text">首选格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%8B%E7%BC%A9%E8%A1%A8%E7%A4%BA%E6%A0%BC%E5%BC%8F"><span class="toc-number">3.1.2.</span> <span class="toc-text">压缩表示格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%85%E5%B5%8CIPv4%E5%9C%B0%E5%9D%80%E7%9A%84IPv6%E5%9C%B0%E5%9D%80%E6%A0%BC%E5%BC%8F"><span class="toc-number">3.1.3.</span> <span class="toc-text">内嵌IPv4地址的IPv6地址格式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#IPv6%E5%89%8D%E7%BC%80"><span class="toc-number">3.2.</span> <span class="toc-text">IPv6前缀</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#IPv6%E5%9C%B0%E5%9D%80%E5%88%86%E7%B1%BB"><span class="toc-number">3.3.</span> <span class="toc-text">IPv6地址分类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%96%E6%B6%88%E5%B9%BF%E6%92%AD%E5%9C%B0%E5%9D%80%E7%9A%84%E5%8E%9F%E5%9B%A0"><span class="toc-number">3.4.</span> <span class="toc-text">取消广播地址的原因</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#IPv6%E5%8D%95%E6%92%AD%E5%9C%B0%E5%9D%80"><span class="toc-number">3.5.</span> <span class="toc-text">IPv6单播地址</span></a></li></ol></li></ol></div></div></div><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/01/03/%E5%AF%86%E7%A0%81%E5%AD%A6%E5%A4%8D%E4%B9%A0/" title="密码学复习"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="密码学复习"/></a><div class="content"><a class="title" href="/2021/01/03/%E5%AF%86%E7%A0%81%E5%AD%A6%E5%A4%8D%E4%B9%A0/" title="密码学复习">密码学复习</a><time datetime="2021-01-02T16:53:31.000Z" title="Created 2021-01-03 00:53:31">2021-01-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/01/01/%E8%AE%A1%E7%BD%912%E5%A4%8D%E4%B9%A0/" title="计网2复习"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="计网2复习"/></a><div class="content"><a class="title" href="/2021/01/01/%E8%AE%A1%E7%BD%912%E5%A4%8D%E4%B9%A0/" title="计网2复习">计网2复习</a><time datetime="2021-01-01T11:59:35.000Z" title="Created 2021-01-01 19:59:35">2021-01-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/12/30/%E9%BB%91%E5%AE%A2%E8%AE%A4%E8%AF%86/" title="黑客认识"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="黑客认识"/></a><div class="content"><a class="title" href="/2020/12/30/%E9%BB%91%E5%AE%A2%E8%AE%A4%E8%AF%86/" title="黑客认识">黑客认识</a><time datetime="2020-12-29T17:00:34.000Z" title="Created 2020-12-30 01:00:34">2020-12-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/12/15/%E7%AD%BE%E5%90%8D%E6%96%B9%E6%A1%88/" title="签名方案"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="签名方案"/></a><div class="content"><a class="title" href="/2020/12/15/%E7%AD%BE%E5%90%8D%E6%96%B9%E6%A1%88/" title="签名方案">签名方案</a><time datetime="2020-12-15T07:20:06.000Z" title="Created 2020-12-15 15:20:06">2020-12-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/12/12/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" title="计算机网络"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="计算机网络"/></a><div class="content"><a class="title" href="/2020/12/12/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" title="计算机网络">计算机网络</a><time datetime="2020-12-12T15:37:07.000Z" title="Created 2020-12-12 23:37:07">2020-12-12</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By jayson</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><div class="js-pjax"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></div></body></html>

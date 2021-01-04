@@ -77,7 +77,7 @@ var saveToLocal = {
   isHome: true,
   isHighlightShrink: false,
   isToc: false,
-  postUpdate: '2020-12-06 23:52:58'
+  postUpdate: '2021-01-04 19:13:29'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -143,14 +143,182 @@ if (asideStatus !== undefined) {
      document.documentElement.classList.remove('hide-aside')
    }
 }})()</script><meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="Jayson" type="application/atom+xml">
-</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/null" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">21</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">10</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">9</div></a></div></div></div><hr/></div></div><div id="body-wrap"><header class="full_page" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Jayson</a></span><span id="menus"><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="site-info"><h1 id="site-title">Jayson</h1><div id="site-subtitle"><span id="subtitle"></span></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/12/05/%E8%80%83%E7%A0%94/" title="考研">     <img class="post_bg" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="考研"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/12/05/%E8%80%83%E7%A0%94/" title="考研">考研</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2020-12-05T13:46:09.000Z" title="Created 2020-12-05 21:46:09">2020-12-05</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E8%80%83%E7%A0%94/">考研</a></span></div><div class="content">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/null" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">27</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">14</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">13</div></a></div></div></div><hr/></div></div><div id="body-wrap"><header class="full_page" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Jayson</a></span><span id="menus"><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="site-info"><h1 id="site-title">Jayson</h1><div id="site-subtitle"><span id="subtitle"></span></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2021/01/03/%E5%AF%86%E7%A0%81%E5%AD%A6%E5%A4%8D%E4%B9%A0/" title="密码学复习">     <img class="post_bg" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="密码学复习"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/01/03/%E5%AF%86%E7%A0%81%E5%AD%A6%E5%A4%8D%E4%B9%A0/" title="密码学复习">密码学复习</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2021-01-02T16:53:31.000Z" title="Created 2021-01-03 00:53:31">2021-01-03</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a></span></div><div class="content">
+d
+开始密码学的复习。
+
+信息安全的基本要求
+
+保密性
+完整性
+认证性
+可用性
+
+密码体制
+
+$(P,C,K,E,D)$
+P表示明文空间
+C表示密文空间
+K表示密钥空间
+E：加密
+D：解密
+
+密码分析的方法
+
+
+唯密文攻击
+已知明文攻击
+选择明文攻击
+选择密文攻击
+自适应选择密文攻击
+
+密码体制的分类对密码体制的分类方法有多种，常用的分类方法有以下三种。
+1、根据密码算法所用的密钥数量对称密码体制（Symmetric cipher，也称为单钥密码体制、对称密钥密码体制或常规密码体制）。如果一个密码系统，它的加密密钥和解密密钥相同，或者虽然不相同，但由其中的任意—个可以很容易地导出另外一个，那么该系统所采用的就是对称密码体制。非对称密码体制（Asymmetric cipher，也称为公开密钥密码体制、非对称密钥密码体制）。如果一个密码系统，其加密算法和解密算法分别用两个不同的密钥实现，并且由加密密钥不能推导出解密密钥，则该系统所采用的就是非对称密码体制。采用非对称密钥密码体制的每个用户都有一对选定的密钥。其中一个是可以公开的，称为公开密钥（Public key），简称公钥；另一个由用户 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2021/01/01/%E8%AE%A1%E7%BD%912%E5%A4%8D%E4%B9%A0/" title="计网2复习">     <img class="post_bg" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="计网2复习"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/01/01/%E8%AE%A1%E7%BD%912%E5%A4%8D%E4%B9%A0/" title="计网2复习">计网2复习</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2021-01-01T11:59:35.000Z" title="Created 2021-01-01 19:59:35">2021-01-01</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%BD%91/">计网</a></span></div><div class="content">
+d
+IPv6的基础RFCIPv6协议的主要特征
+IPv6协议具有巨大的地址空间
+IPv6具有自动将IP地址分配给用户的功能
+
+协议首部的简化和改进
+
+IPv6对ICMP进行了改进 
+IPv6的分段只发生在源结点 
+IPSec是IPv6的重要组成部分 
+提供服务质量支持 
+IPv6协议对移动性提供内置的支持 
+IPv6路由简化
+
+IPv6的首部IPv6的首部路由器转发IPv6分组的过程
+IPv6扩展首部
+逐跳选项扩展首部
+
+从源结点到目的结点的路由上的每个结点，即每个转发分 组的网络结点（路由器）都检查逐跳选项中的信息。
+选项类型，选项数据长度，选项数据
+Pad1和PadN填充选项
+超大有效荷载选项
+路由器告警选项
+
+路由扩展首部
+
+用来指出IPv6分组在从源结点到目的结点的过程中，需 要经过的一个或多个网络中间结点（路由器）,即源路由
+
+分段扩展首部
+
+IPv6协议只允许源结点对分组进行分段，简化 了中间结点对分组的处理
+
+身份认证扩展首部
+
+用于实现数据的完整性和对分组来源的确认，完整 性保证了数据在传输过程中没有被篡改过，分组来 源的确认分组确实来自于源地址所标识的接口
+
+封装安 ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/12/30/%E9%BB%91%E5%AE%A2%E8%AE%A4%E8%AF%86/" title="黑客认识">     <img class="post_bg" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="黑客认识"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/12/30/%E9%BB%91%E5%AE%A2%E8%AE%A4%E8%AF%86/" title="黑客认识">黑客认识</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2020-12-29T17:00:34.000Z" title="Created 2020-12-30 01:00:34">2020-12-30</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E9%BB%91%E5%AE%A2/">黑客</a></span></div><div class="content">
+d
+AP
+网关
+二级路由器?????????????????
+PPPOE得到动态ip地址
+Qos路由器
+</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/12/15/%E7%AD%BE%E5%90%8D%E6%96%B9%E6%A1%88/" title="签名方案">     <img class="post_bg" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="签名方案"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/12/15/%E7%AD%BE%E5%90%8D%E6%96%B9%E6%A1%88/" title="签名方案">签名方案</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2020-12-15T07:20:06.000Z" title="Created 2020-12-15 15:20:06">2020-12-15</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a></span></div><div class="content">
+d
+签名方案说一下对签名方案的理解，原理就是使用发送方使用私钥加密，接收方使用公钥来解密，看看解密出来的结果是不是和发送方发过来的原文或者原文的摘要($hash$)，由于是私钥的原因则可以保证必定是出自发送方手里的。
+ElGamal签名方案定义公钥:
+
+(p,\alpha,\beta)，其中\beta=a^\alpha私钥：
+
+(a)待签名数：$x$,随机数：$k$，签名函数：
+
+sig_k(x,k)=(y,\delta)其中，
+
+y=\alpha^kmod\space p,\delta=(x-ay)k^{-1}mod(p-1)验证函数:
+
+ver_k(x,(y,\delta))=true\leftrightarrow \beta^yy^\delta=\alpha^x(mod \space p)证明:
+
+\beta^yy^\delta=\alpha^{ay}\alpha^{k\delta}\\\delta=(x-ay)k^{-1}mode(p-1)\\所以,\beta^yy^\delta =\alpha^x(mod\space p)安全性Schnorr 签名方案
+公钥:(p,q,\a ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/12/12/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" title="计算机网络">     <img class="post_bg" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="计算机网络"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/12/12/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" title="计算机网络">计算机网络</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2020-12-12T15:37:07.000Z" title="Created 2020-12-12 23:37:07">2020-12-12</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></span></div><div class="content">
+
+
+计算机网络
+理解记忆，多思考确实哦
+
+抓住重点
+
+
+按五层，各层协议，网络设备
+计算机网络概念，组成，功能和分类 计网的作用：将计算机系统(端系统)，通过通信设备（交换机，路由器）与线路连接起来，成为一个系统。
+计算机网络的功能
+数据通信
+
+资源共享
+
+
+硬件，软件，数据资源的共享
+
+分布式处理
+
+多台计算机承担一个工作任务的不同部分
+
+提高可靠性
+
+通过一些互补的操作，或者说是兜底的操作来使得这个系统更加可靠
+
+负载均衡
+计算机网络的组成
+组成部分
+
+
+硬件，软件，协议
+
+工作方式
+
+-边缘部分 （主机，端系统)
+-核心部分，为边缘部分提供服务的，就是路由器,网络那种啦
+
+功能组成
+
+-通信子网 (OSI下三层)
+-资源子网 (OSI上三层 )
+计算机网络的分类
+按分布范围
+
+广域网，城域网，局域网，个人区域网
+
+按使用者
+
+-公用网
+-专用网
+
+交换技术
+
+-电路交换
+-报文交换
+-分组交换
+
+按拓扑结构
+
+总线型，星型，环型，网状型
+
+按传输技术
+
+
+广播式网络 ———公共通信
+点对点网络 ——— 分组转发，路由选择
+
+标准化工作及其相关组织标准化工作要有统一的标准才能实现 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/12/09/leetcode/" title="leetcode">     <img class="post_bg" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="leetcode"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/12/09/leetcode/" title="leetcode">leetcode</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2020-12-09T02:23:56.000Z" title="Created 2020-12-09 10:23:56">2020-12-09</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/leetcode/">leetcode</a></span></div><div class="content">
+开始leetcode的刷题了，总结leetcode并且做题解
+
+Leetcode1. 两数之和题目描述给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。
+你可以假设每种输入只会对应一个答案。但是，数组中同一个元素不能使用两遍。
+示例:
+给定 nums = [2, 7, 11, 15], target = 9
+因为 nums[0] + nums[1] = 2 + 7 = 9所以返回 [0, 1]
+自己写的代码好像不太聪明的样子，复杂度达到$o(n^2)$…..
+1234567891011class Solution:    &quot;&quot;&quot;        :type nums: List[int]        :type target: int        :rtype: List[int]        &quot;&quot;&quot;    def twoSum(self, nums, target: int):        for i in range(len(nums)):  ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/12/05/%E8%80%83%E7%A0%94/" title="考研">     <img class="post_bg" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="考研"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/12/05/%E8%80%83%E7%A0%94/" title="考研">考研</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2020-12-05T13:46:09.000Z" title="Created 2020-12-05 21:46:09">2020-12-05</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E8%80%83%E7%A0%94/">考研</a></span></div><div class="content">
 现在是2020.12.5，准备要开始考研的准备啦，因为我的基础其实没有很好，所以得好好地努力一把，加油！
 考研考研时间线12.5-12.20
 总结考研的注意事项以及一些上岸人的心得与体会
 总结各个学校的信息，确定要考的科目以及学校
-买好所有教材
+买好408的部分教材
 
-12.21-大三上学期期末结束开始起步的复习，相当于第一轮复习的开头吧
+12.21-大三上学期期末结束开始复习计网，和数据结构，刷leetcode题目，总结到博客，这样考虑主要是因为我期末考试要考计网，
 寒假-6月份第一轮复习结束，基础篇
 7月份到九月份提高篇
 十月份到十一月份冲刺篇
@@ -188,7 +356,12 @@ if (asideStatus !== undefined) {
 
 招45
 数二，英二，408
-</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/12/05/%E6%95%B0%E5%80%BC%E5%BE%AE%E5%88%86/" title="数值微分">     <img class="post_bg" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数值微分"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/12/05/%E6%95%B0%E5%80%BC%E5%BE%AE%E5%88%86/" title="数值微分">数值微分</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2020-12-05T02:19:43.000Z" title="Created 2020-12-05 10:19:43">2020-12-05</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97/">数值计算</a></span></div><div class="content">d
+参考书目政治英语的复习问嘉琪吧。
+政治：知识精讲+肖1000+肖八+肖四
+英语：历年真题
+单词：红宝书
+恋练有词
+新版恋词—题源 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/12/05/%E6%95%B0%E5%80%BC%E5%BE%AE%E5%88%86/" title="数值微分">     <img class="post_bg" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数值微分"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/12/05/%E6%95%B0%E5%80%BC%E5%BE%AE%E5%88%86/" title="数值微分">数值微分</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2020-12-05T02:19:43.000Z" title="Created 2020-12-05 10:19:43">2020-12-05</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97/">数值计算</a></span></div><div class="content">d
 
 总结了数值积分，接下来就是数值微分了，好吧我再说废话。
 两点前向差分公式
@@ -250,7 +423,6 @@ J to the N 开始代表时代的声音
 从地狱到天堂 十八般的招数
 bitch 是否还能看得见
 bitch  ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/12/02/%E7%A6%BB%E6%95%A3%E5%AF%B9%E6%95%B0%E9%97%AE%E9%A2%98/" title="离散对数问题">     <img class="post_bg" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="离散对数问题"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/12/02/%E7%A6%BB%E6%95%A3%E5%AF%B9%E6%95%B0%E9%97%AE%E9%A2%98/" title="离散对数问题">离散对数问题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2020-12-01T17:01:34.000Z" title="Created 2020-12-02 01:01:34">2020-12-02</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a></span></div><div class="content">
-d
 离散对数问题可以表达成一下形式：
 
 \beta\in,找出唯一指数a，0\leq a\leq n-1,使得\alpha ^a=\betaShanks算法Pollard $\rho$算法Pohlig-Hellman算法</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/11/30/%E6%95%B0%E5%80%BC%E7%A7%AF%E5%88%86/" title="数值积分">     <img class="post_bg" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数值积分"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/11/30/%E6%95%B0%E5%80%BC%E7%A7%AF%E5%88%86/" title="数值积分">数值积分</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2020-11-30T15:54:33.000Z" title="Created 2020-11-30 23:54:33">2020-11-30</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97/">数值计算</a></span></div><div class="content">
@@ -273,145 +445,8 @@ m次代数精度精度准确即是$\int_a^bf(x)dx$ 与 $\sum_{k=0}^nA_kf(x_k)$�
 对$x^k(k=0,1,2,…,m)$精确成立
 对$x^{m+1}$不精确成立
 
-插值型积分插值型积分也就是能够确定$A_k$的值，实际上应该是任意一种不同类型的数值积分都是可以确定$A_k$的 ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/11/29/%E6%8F%92%E5%80%BC/" title="插值">     <img class="post_bg" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="插值"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/11/29/%E6%8F%92%E5%80%BC/" title="插值">插值</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2020-11-28T17:30:30.000Z" title="Created 2020-11-29 01:30:30">2020-11-29</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97/">数值计算</a></span></div><div class="content">
-数值计算学习中有学到插值，总结一下插值，和拟合的区别是拟合是找到总体上来说离给出的已知点最近的曲线，插值则是求得的曲线是满足都经过已知点的，就很牛逼。
-插值一些定义以及性质
-插值函数g(x):
-
-g(x_i)=f(x_i),i=0,1,....,n
-插值节点：上面的{$x_i$}
-
-定理：n+1个$x_i$不相同节点的n次插值多项式存在且唯一
-
-
-拉格朗日插值理解朗日朗日插值它的插值多项式在非它的插值节点$x_i$的$l(x_j)$都取0
-缺点：节点变化的时候拉格朗日插值需要重新构造
-插值函数
-g(x)=f(x_0)l_0(x)+f(x_1)l_1(x)+...+f(x_n)l_n(x)​                                                               #$l_i(x)$是次数不超过n次的多项式
-
-对于g(x_i),l_i(x)=1，l_j(x)=0,j\neq iLagrange基函数：
-
-l_i(x)=\frac{(x-x_0)(x-x_{i-1})(x-x_{i+1})(x-x_n)}{(x_i-x_0)(x_i-x_ ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/11/28/python%E4%B8%8B%E5%87%BD%E6%95%B0%E4%B8%8E%E5%9B%BE%E5%83%8F%E7%9A%84%E6%98%BE%E7%A4%BA/" title="python下函数与图像的显示">     <img class="post_bg" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="python下函数与图像的显示"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/11/28/python%E4%B8%8B%E5%87%BD%E6%95%B0%E4%B8%8E%E5%9B%BE%E5%83%8F%E7%9A%84%E6%98%BE%E7%A4%BA/" title="python下函数与图像的显示">python下函数与图像的显示</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2020-11-27T16:57:10.000Z" title="Created 2020-11-28 00:57:10">2020-11-28</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/python/">python</a></span></div><div class="content">
-数值计算里为了显示函数的图像，总结一下python里相关的知识。
-
-调库matplotlib.pyplot和MATLAB很相似，之中各种状态通过函数调用保存。
-123import numpy as npimport matplotlib.pyplot as pltfrom pylab import *
-np.arange()np.arange(a,b,step) #step是步长
-函数返回一个有终点和起点的固定步长的排列，如[1,2,3,4,5]，起点是1，终点是6，步长为1。
-plt.plot()plt.plot(x,y,format_string,**kwargs)
-函数用来确定x,y，以及图像的一些颜色之类的特征
-
-
-
-
-参数
-说明
-
-
-
-
-x
-X轴数据，列表或数组，可选
-
-
-y
-Y轴数据，列表或数组
-
-
-format_string
-控制曲线的格式字符串，可选
-
-
-**kwargs
-第二组或更多(x,y,format_string)，可画多条曲线
-
-
-
-
-format_string 由颜色字符、风格字符、标记字符组成
-
-颜色字符
-
-&#39;b&#39; 蓝色  &#39;m& ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/11/26/%E6%8B%9F%E5%90%88/" title="拟合">     <img class="post_bg" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="拟合"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/11/26/%E6%8B%9F%E5%90%88/" title="拟合">拟合</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2020-11-26T09:09:47.000Z" title="Created 2020-11-26 17:09:47">2020-11-26</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97/">数值计算</a></span></div><div class="content">
-拟合，插值，逼近是数学分析的三大基础工具，在这里总结一下拟合
-拟合：已知点列，整体靠近它们
-插值：已知点列并且完全经过点列
-逼近：已知曲线，或者点列，通过逼近使得构造的函数无限靠近它们
-拟合拟合定义
-最小二乘问题最小二乘即f(X)-g(X)的范数是2-范数，这种问题就是最小二乘问题。
-所以，即找g(x)使得
-
-||f(x)-g(x)||_2=\sqrt{\sum_{i=0}^n(f(x_i)-g(x_i))^2}取到最小值，记为评价函数$L(a_1,a_2…..a_n)$
-欲取得评价函数最小值，则要对每个变量$a_i$的偏导等于零，即：
-
-\frac{\partial L}{\partial a_i}=0 ,i\in(1,n)
-线性拟合
-
-
-f(x)=ax+b
-低次多项式拟合
-
-f(x)=ax^3+bx^2+cx+d
-指数拟合
-
-
-
-f(x)=e^{ax+b}
-\downarrow
-\ln{f(x)}=ax+b将$\ln{f(x)}$记为y,则变成了线性拟合y=ax+b
-线性角度的最小二乘从微积分的视角来看，最小二乘法相当于求解约等方程组，那么最小二乘法的线性代数视角又是什么呢？
-　 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/11/24/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" title="排序算法">     <img class="post_bg" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="排序算法"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/11/24/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" title="排序算法">排序算法</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2020-11-24T12:53:16.000Z" title="Created 2020-11-24 20:53:16">2020-11-24</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></span></div><div class="content">
-复习数据结构，然后总结一下数据结构的排序算法，并再用python全都实现一次。
-
-
-排序比较排序冒泡排序冒泡排序是最基本的排序算法，比较相邻的元素，将大（小）的放到后面。每一躺循环，将最大（最小）的交换到最后面。
-算法流程
-第一躺循环，从arr[0]到arr[N-1]，两两比较，若arr[x]&gt;arr[x+1]，则进行交换，从而使得最后在arr[N-1]的是最大的数
-下一趟循环，则变成从arr[0]到arr[N-2]
-重复直到完成最后一趟循环即arr[0]到arr[1]的比较
-
-算法评价一共进行了N-1次循环，确定了N-1次要确定的最大数
-稳定，平均时间复杂度为$o(n^2)$
-算法代码1234567891011def Bubble_Sort(arr):    length=len(arr)    j=length-1    for i in range(length-1):        for x in range(j):            if arr[x]&gt;arr[x+1]:                temp=arr[x]                 ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/11/24/%E5%85%B3%E4%BA%8E%E8%80%83%E7%A0%942/" title="关于考研2">     <img class="post_bg" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="关于考研2"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/11/24/%E5%85%B3%E4%BA%8E%E8%80%83%E7%A0%942/" title="关于考研2">关于考研2</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2020-11-24T05:16:33.000Z" title="Created 2020-11-24 13:16:33">2020-11-24</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E6%9C%AA%E6%9D%A5%E6%96%B9%E5%90%91/">未来方向</a></span></div><div class="content">
-几天前的话，回了家一趟，和我姐姐聊了一下，我姐姐现在大四，还有一个月就要考研初试了，她和我讲了很多关于考研的事情，我基本也是确定了之后就是要考研了。
-
-剑指2021 12月份~
-
-时间安排寒假前
-先确定好自己要考研的院校
-那些要考的专业科目开始看，但不是刷题很深地看，就是过一下，总结到blog，然后再自己敲代码去实现
-开始背单词？好久没有学习英语了
-还有这学期地课也不要落下了，开始准备复习
-
-寒假后按照那个时间表跟着规划去做题，刷题，听课！
-感觉就是和高考差不都，一轮复习，又一轮复习的
-
-考研科目英语100分
-数学150分
-政治100分 
-专业课：150分
-数据结构45分，计算机组成原理45分，操作系统35分，计算机网络25分；
-试卷题型结构：单项选择题，80分（40小题，每小题2分）；综合题，70分；
-
-加油~愿韶华不负
-​                                                                      JAYSON
-</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/11/24/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" title="动态规划">     <img class="post_bg" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="动态规划"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/11/24/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" title="动态规划">动态规划</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2020-11-23T16:45:26.000Z" title="Created 2020-11-24 00:45:26">2020-11-24</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E7%AE%97%E6%B3%95/">算法</a></span></div><div class="content">
-动态规划算法，一个感觉和递归很像的东西。
-递归：自上到下，慢慢到底部，不会记录每个问题的结果，内存消耗相对小，但会冲股份计算相同的问题，耗时多。
-动态规划：自下到上，会记录每一个问题的结果，内存消耗相对比较大，但不会计算相同的问题，时间消耗较小。
-动态规划解决问题的特点
-最优化：即一个问题的子问题的解也是最优的
-无后效性：即一个状态与之后的决策无关，如找零钱问题amount[5]与amount[5+x]无关
-有重叠子问题：子问题之间不是独立的，可能子问题之间存在子问题调用关系
-
-tips：有重叠子问题不是必要条件，但这是动态规划算法相比其他算法的优势
-动态规划算法步骤
-创建一个存放保存子问题状态的空间
-找到每个状态之间的之间的关系
-返回需要求的值
-
-找零钱问题123456789101112131415class Solution:    def coinChange(self, coins, amount: int) -&gt; int:        coins.sort()        dp=&#123;&#125;        dp[0]=0        for i in ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" src="/null" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">jayson</div><div class="author-info__description">这里是一个要考研的大三程序狗的博客，喜欢跳舞，饶舌音乐，健身，在这里会记录自己的生活以及学习</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">21</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">10</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">9</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div></div><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2020/12/05/%E8%80%83%E7%A0%94/" title="考研"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="考研"/></a><div class="content"><a class="title" href="/2020/12/05/%E8%80%83%E7%A0%94/" title="考研">考研</a><time datetime="2020-12-05T13:46:09.000Z" title="Created 2020-12-05 21:46:09">2020-12-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/12/05/%E6%95%B0%E5%80%BC%E5%BE%AE%E5%88%86/" title="数值微分"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数值微分"/></a><div class="content"><a class="title" href="/2020/12/05/%E6%95%B0%E5%80%BC%E5%BE%AE%E5%88%86/" title="数值微分">数值微分</a><time datetime="2020-12-05T02:19:43.000Z" title="Created 2020-12-05 10:19:43">2020-12-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/12/03/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9F%E5%A4%8D%E4%B9%A0/" title="信号与系统第复习"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="信号与系统第复习"/></a><div class="content"><a class="title" href="/2020/12/03/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9F%E5%A4%8D%E4%B9%A0/" title="信号与系统第复习">信号与系统第复习</a><time datetime="2020-12-03T11:00:29.000Z" title="Created 2020-12-03 19:00:29">2020-12-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/12/02/demo1/" title="demo1"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="demo1"/></a><div class="content"><a class="title" href="/2020/12/02/demo1/" title="demo1">demo1</a><time datetime="2020-12-01T17:33:35.000Z" title="Created 2020-12-02 01:33:35">2020-12-02</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/12/02/%E7%A6%BB%E6%95%A3%E5%AF%B9%E6%95%B0%E9%97%AE%E9%A2%98/" title="离散对数问题"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="离散对数问题"/></a><div class="content"><a class="title" href="/2020/12/02/%E7%A6%BB%E6%95%A3%E5%AF%B9%E6%95%B0%E9%97%AE%E9%A2%98/" title="离散对数问题">离散对数问题</a><time datetime="2020-12-01T17:01:34.000Z" title="Created 2020-12-02 01:01:34">2020-12-02</time></div></div></div></div></div><div class="card-widget card-categories"><div class="card-content"><div class="item-headline"><i class="fas fa-folder-open"></i><span>Categories</span></div><ul class="card-category-list" id="aside-cat-list">
-            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/python/"><span class="card-category-list-name">python</span><span class="card-category-list-count">4</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9F/"><span class="card-category-list-name">信号与系统</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/"><span class="card-category-list-name">密码学</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97/"><span class="card-category-list-name">数值计算</span><span class="card-category-list-count">4</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"><span class="card-category-list-name">数据结构</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%9C%AA%E6%9D%A5%E6%96%B9%E5%90%91/"><span class="card-category-list-name">未来方向</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E7%AE%97%E6%B3%95/"><span class="card-category-list-name">算法</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E8%80%83%E7%A0%94/"><span class="card-category-list-name">考研</span><span class="card-category-list-count">1</span></a></li>
+插值型积分插值型积分也就是能够确定$A_k$的值，实际上应该是任意一种不同类型的数值积分都是可以确定$A_k$的 ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" src="/null" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">jayson</div><div class="author-info__description">这里是一个要考研的大三程序狗的博客，喜欢跳舞，饶舌音乐，健身，在这里会记录自己的生活以及学习</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">27</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">14</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">13</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div></div><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/01/03/%E5%AF%86%E7%A0%81%E5%AD%A6%E5%A4%8D%E4%B9%A0/" title="密码学复习"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="密码学复习"/></a><div class="content"><a class="title" href="/2021/01/03/%E5%AF%86%E7%A0%81%E5%AD%A6%E5%A4%8D%E4%B9%A0/" title="密码学复习">密码学复习</a><time datetime="2021-01-02T16:53:31.000Z" title="Created 2021-01-03 00:53:31">2021-01-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/01/01/%E8%AE%A1%E7%BD%912%E5%A4%8D%E4%B9%A0/" title="计网2复习"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="计网2复习"/></a><div class="content"><a class="title" href="/2021/01/01/%E8%AE%A1%E7%BD%912%E5%A4%8D%E4%B9%A0/" title="计网2复习">计网2复习</a><time datetime="2021-01-01T11:59:35.000Z" title="Created 2021-01-01 19:59:35">2021-01-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/12/30/%E9%BB%91%E5%AE%A2%E8%AE%A4%E8%AF%86/" title="黑客认识"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="黑客认识"/></a><div class="content"><a class="title" href="/2020/12/30/%E9%BB%91%E5%AE%A2%E8%AE%A4%E8%AF%86/" title="黑客认识">黑客认识</a><time datetime="2020-12-29T17:00:34.000Z" title="Created 2020-12-30 01:00:34">2020-12-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/12/15/%E7%AD%BE%E5%90%8D%E6%96%B9%E6%A1%88/" title="签名方案"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="签名方案"/></a><div class="content"><a class="title" href="/2020/12/15/%E7%AD%BE%E5%90%8D%E6%96%B9%E6%A1%88/" title="签名方案">签名方案</a><time datetime="2020-12-15T07:20:06.000Z" title="Created 2020-12-15 15:20:06">2020-12-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/12/12/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" title="计算机网络"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="计算机网络"/></a><div class="content"><a class="title" href="/2020/12/12/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" title="计算机网络">计算机网络</a><time datetime="2020-12-12T15:37:07.000Z" title="Created 2020-12-12 23:37:07">2020-12-12</time></div></div></div></div></div><div class="card-widget card-categories"><div class="card-content"><div class="item-headline"><i class="fas fa-folder-open"></i><span>Categories</span></div><ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/leetcode/"><span class="card-category-list-name">leetcode</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/python/"><span class="card-category-list-name">python</span><span class="card-category-list-count">4</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9F/"><span class="card-category-list-name">信号与系统</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/"><span class="card-category-list-name">密码学</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97/"><span class="card-category-list-name">数值计算</span><span class="card-category-list-count">4</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"><span class="card-category-list-name">数据结构</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%9C%AA%E6%9D%A5%E6%96%B9%E5%90%91/"><span class="card-category-list-name">未来方向</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E7%AE%97%E6%B3%95/"><span class="card-category-list-name">算法</span><span class="card-category-list-count">3</span></a></li>
             <li class="card-category-list-item more is-center"><a class="card-category-list-link-more" href="/categories/">
                 <span>More</span><i class="fas fa-angle-right"></i></a></li>
-            </ul></div></div><div class="card-widget card-tags"><div class="card-content"><div class="item-headline"><i class="fas fa-tags"></i><span>Tags</span></div><div class="card-tag-cloud"><a href="/tags/matlab/" style="font-size: 1.1em; color: #999">matlab</a> <a href="/tags/python/" style="font-size: 1.5em; color: #99a9bf">python</a> <a href="/tags/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9F/" style="font-size: 1.1em; color: #999">信号与系统</a> <a href="/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/" style="font-size: 1.1em; color: #999">密码学</a> <a href="/tags/%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97/" style="font-size: 1.37em; color: #99a4b2">数值计算</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 1.1em; color: #999">数据结构</a> <a href="/tags/%E6%9C%AA%E6%9D%A5%E6%96%B9%E5%90%91/" style="font-size: 1.1em; color: #999">未来方向</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 1.23em; color: #999ea6">算法</a> <a href="/tags/%E8%80%83%E7%A0%94/" style="font-size: 1.1em; color: #999">考研</a> <a href="/tags/%E9%A5%B6%E8%88%8C/" style="font-size: 1.1em; color: #999">饶舌</a></div></div></div><div class="card-widget card-archives"><div class="card-content"><div class="item-headline"><i class="fas fa-archive"></i><span>Archives</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/12/"><span class="card-archive-list-date">December 2020</span><span class="card-archive-list-count">5</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/11/"><span class="card-archive-list-date">November 2020</span><span class="card-archive-list-count">14</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/10/"><span class="card-archive-list-date">October 2020</span><span class="card-archive-list-count">2</span></a></li></ul></div></div><div class="card-widget card-webinfo"><div class="card-content"><div class="item-headline"><i class="fas fa-chart-line"></i><span>Info</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">Article :</div><div class="item-count">21</div></div><div class="webinfo-item"><div class="item-name">UV :</div><div class="item-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="item-name">PV :</div><div class="item-count" id="busuanzi_value_site_pv"></div></div><div class="webinfo-item"><div class="item-name">Last Push :</div><div class="item-count" id="last-push-date" data-lastPushDate="2020-12-06T15:52:58.092Z"></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 By jayson</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><div class="js-pjax"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></div></body></html>
+            </ul></div></div><div class="card-widget card-tags"><div class="card-content"><div class="item-headline"><i class="fas fa-tags"></i><span>Tags</span></div><div class="card-tag-cloud"><a href="/tags/leetcode/" style="font-size: 1.1em; color: #999">leetcode</a> <a href="/tags/matlab/" style="font-size: 1.1em; color: #999">matlab</a> <a href="/tags/python/" style="font-size: 1.5em; color: #99a9bf">python</a> <a href="/tags/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9F/" style="font-size: 1.1em; color: #999">信号与系统</a> <a href="/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/" style="font-size: 1.3em; color: #99a1ac">密码学</a> <a href="/tags/%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97/" style="font-size: 1.4em; color: #99a5b6">数值计算</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 1.1em; color: #999">数据结构</a> <a href="/tags/%E6%9C%AA%E6%9D%A5%E6%96%B9%E5%90%91/" style="font-size: 1.1em; color: #999">未来方向</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 1.3em; color: #99a1ac">算法</a> <a href="/tags/%E8%80%83%E7%A0%94/" style="font-size: 1.2em; color: #999da3">考研</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 1.1em; color: #999">计算机网络</a> <a href="/tags/%E8%AE%A1%E7%BD%91/" style="font-size: 1.1em; color: #999">计网</a> <a href="/tags/%E9%A5%B6%E8%88%8C/" style="font-size: 1.1em; color: #999">饶舌</a> <a href="/tags/%E9%BB%91%E5%AE%A2/" style="font-size: 1.1em; color: #999">黑客</a></div></div></div><div class="card-widget card-archives"><div class="card-content"><div class="item-headline"><i class="fas fa-archive"></i><span>Archives</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/01/"><span class="card-archive-list-date">January 2021</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/12/"><span class="card-archive-list-date">December 2020</span><span class="card-archive-list-count">9</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/11/"><span class="card-archive-list-date">November 2020</span><span class="card-archive-list-count">14</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/10/"><span class="card-archive-list-date">October 2020</span><span class="card-archive-list-count">2</span></a></li></ul></div></div><div class="card-widget card-webinfo"><div class="card-content"><div class="item-headline"><i class="fas fa-chart-line"></i><span>Info</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">Article :</div><div class="item-count">27</div></div><div class="webinfo-item"><div class="item-name">UV :</div><div class="item-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="item-name">PV :</div><div class="item-count" id="busuanzi_value_site_pv"></div></div><div class="webinfo-item"><div class="item-name">Last Push :</div><div class="item-count" id="last-push-date" data-lastPushDate="2021-01-04T11:13:29.731Z"></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By jayson</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><div class="js-pjax"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></div></body></html>
