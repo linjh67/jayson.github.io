@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-01-07T15:00:54.495Z</updated>
+  <updated>2021-01-10T08:14:58.923Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,13 +17,95 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>NFV</title>
+    <link href="http://example.com/2021/01/10/NFV/"/>
+    <id>http://example.com/2021/01/10/NFV/</id>
+    <published>2021-01-09T17:33:38.000Z</published>
+    <updated>2021-01-10T08:14:58.923Z</updated>
+    
+    <content type="html"><![CDATA[<hr><h1 id="NFV"><a href="#NFV" class="headerlink" title="NFV"></a>NFV</h1><p>指的是网络功能虚拟化。</p><p>NFV方法不再依赖于各种硬件平台，而是使用少量标准化平台类型，使用虚拟化技术提供所需的网络功能</p><h2 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h2><h3 id="虚拟化网络功能VNF"><a href="#虚拟化网络功能VNF" class="headerlink" title="虚拟化网络功能VNF"></a>虚拟化网络功能VNF</h3><p>负责网络功能的软件的实现，运行在NFVI上。</p><p>EM:网元管理功能</p><h3 id="网络功能虚拟化基础设施NFVI"><a href="#网络功能虚拟化基础设施NFVI" class="headerlink" title="网络功能虚拟化基础设施NFVI"></a>网络功能虚拟化基础设施NFVI</h3><p>虚拟化资源以及虚拟化层。</p><ol><li><p>硬件资源</p><p>计算，存储，网络硬件</p></li><li><p>虚拟化层</p><p>将硬件资源抽象成为虚拟资源供给VNF使用</p></li></ol><h3 id="NFV管理和编排（MANO）"><a href="#NFV管理和编排（MANO）" class="headerlink" title="NFV管理和编排（MANO）"></a>NFV管理和编排（MANO）</h3><p>Management and Orchestration</p><p>负责物理/虚拟化资源的生命周期管理以及编排以及VNF的生命周期管理。</p><ol><li><p>VIM</p><p>虚拟化基础设施管理器.控制着VNF的虚拟资源分配，如虚拟计算，虚拟存储和虚拟网络。Openstack和VMWare都可以作为VIM，前者是开源的，后者是商业的。</p></li><li><p>VNFM</p><p>虚拟化网络功能管理器.管理VNF的生命周期，如上线、下线，进行状态监控、image onboard。VNFM基于VNFD（VNF描述）来管理VNF。</p></li><li><p>NFVO</p><p>网络功能虚拟化编排器.用以管理NS（Network Service，网络业务）生命周期，并协调NS生命周期的管理、协调VNF生命周期的管理（需要得到VNF管理器VNFM的支持）、协调NFVI各类资源的管理（需要得到虚拟化基础设施管理器VIM的支持），以此确保所需各类资源与连接的优化配置。onboard新的网络业务，VNF转发表，VNF package。 NFVO基于NSD（网络服务描述）运行，NSD中包含Service chain，NFV以及perfomance goal等。</p></li></ol><h3 id="OSS-BSS"><a href="#OSS-BSS" class="headerlink" title="OSS/BSS"></a>OSS/BSS</h3><h2 id="虚拟机"><a href="#虚拟机" class="headerlink" title="虚拟机"></a>虚拟机</h2><h2 id="好处"><a href="#好处" class="headerlink" title="好处"></a>好处</h2><ol><li><p>减少资本支出</p></li><li><p>减少运营支出</p><p>成本低</p></li><li><p>快速创新和推出服务的能力，标准化和开放的接口使互操作性变得容易，</p></li><li><p>使用单一的平台实现不同的应用应用程序、用户和租户提供了<strong>灵活性</strong>，通过快速增加或减少服务来满足不断变化的需求，可以根据地理位置或客户集进行有针对性的服务介绍</p></li><li><p>可以提供多种多样的生态系统并鼓励<strong><em>开放性</em></strong></p></li></ol><h2 id="要求"><a href="#要求" class="headerlink" title="要求"></a>要求</h2><p>NFV的设计和实施必须满足许多要求和技术挑战，包括：</p><ol><li>可移植性/互操作性</li><li>性能权衡</li><li>遗留设备的迁移与共存</li><li>管理与协调</li><li>自动化</li><li>安全性与弹性</li><li>网络稳定性</li><li>简单性</li><li>集成性</li></ol><h2 id="SDN-amp-NFV"><a href="#SDN-amp-NFV" class="headerlink" title="SDN&amp;NFV"></a>SDN&amp;NFV</h2><ol><li>控制器上</li><li>编排（orchestration）上，如：资源调配，网络连接配置，带宽分配，操作自动化，监视，安全，和策略控制</li><li>SDN控制器实现转发图，提供服务链的自动供应33</li></ol><h2 id="网络层虚拟化"><a href="#网络层虚拟化" class="headerlink" title="网络层虚拟化"></a>网络层虚拟化</h2><h3 id="VLAN"><a href="#VLAN" class="headerlink" title="VLAN"></a>VLAN</h3><p>虚拟局域网，每一个VLAN是一个广播域。</p><p>定义：</p><ol><li>端口组</li><li>MAC地址</li><li>协议信息</li></ol><h3 id="VPN"><a href="#VPN" class="headerlink" title="VPN"></a>VPN</h3><p>建筑在Internet上能够自我管理的专用网络</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;hr&gt;
+&lt;h1 id=&quot;NFV&quot;&gt;&lt;a href=&quot;#NFV&quot; class=&quot;headerlink&quot; title=&quot;NFV&quot;&gt;&lt;/a&gt;NFV&lt;/h1&gt;&lt;p&gt;指的是网络功能虚拟化。&lt;/p&gt;
+&lt;p&gt;NFV方法不再依赖于各种硬件平台，而是使用少量标准化平台类型，使用虚拟化技术提供所需</summary>
+      
+    
+    
+    
+    <category term="计算机网络" scheme="http://example.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+    
+    <category term="计算机网络" scheme="http://example.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SDN</title>
+    <link href="http://example.com/2021/01/09/SDN/"/>
+    <id>http://example.com/2021/01/09/SDN/</id>
+    <published>2021-01-09T05:34:29.000Z</published>
+    <updated>2021-01-09T17:33:19.653Z</updated>
+    
+    <content type="html"><![CDATA[<hr><h1 id="SDN"><a href="#SDN" class="headerlink" title="SDN"></a>SDN</h1><ol><li>网络开放可编程</li><li>数控分离</li><li>逻辑上集中控制</li></ol><p>传统是分布式的，而SDN是数控分离，分层的。</p><script type="math/tex; mode=display">SDN应用\\\downarrow _{北向接口}\\控制平面\\\downarrow _{南向接口}\\数据平面</script><h1 id="SDN数据平面"><a href="#SDN数据平面" class="headerlink" title="SDN数据平面"></a>SDN数据平面</h1><p>又叫做<strong><em>基础设施层</em></strong>。</p><h2 id="模块组成"><a href="#模块组成" class="headerlink" title="模块组成"></a>模块组成</h2><ol><li>分组转发模块</li><li>Qos</li><li>OAM</li><li>保护模块</li><li>接口业务适配模块</li><li>同步处理模块</li></ol><h2 id="OpenFlow"><a href="#OpenFlow" class="headerlink" title="OpenFlow"></a>OpenFlow</h2><p>通过将网络设备控制平面与数据平面分离开来，从而实现了网络流量的控制，并使得网络变得更加智能。</p><p>是控制器和交换机之间的标准协议。</p><h3 id="OpenFlow控制器"><a href="#OpenFlow控制器" class="headerlink" title="OpenFlow控制器"></a>OpenFlow控制器</h3><p>位于控制层。</p><ol><li>NOX/POX</li><li>ONOS</li><li>OpenDaylight</li></ol><h3 id="OpenFlow交换机"><a href="#OpenFlow交换机" class="headerlink" title="OpenFlow交换机"></a>OpenFlow交换机</h3><p>由多个流表和一个组表构成</p><h4 id="流表项组成"><a href="#流表项组成" class="headerlink" title="流表项组成"></a>流表项组成</h4><p>包含多个流表项，如：</p><ol><li>匹配域（用来识别该条表项对应的flow）</li><li>优先级（定义流表项的优先顺序）</li><li>计数器（用于保存与条目相关统计信息）</li><li>指令（匹配表项后需要对数据分组执行的动作）</li><li>Timeouts</li><li>cookies</li><li>flags</li></ol><h4 id="流表处理流程"><a href="#流表处理流程" class="headerlink" title="流表处理流程"></a>流表处理流程</h4><p>数据包到达交换机后：</p><ol><li>从第一个流表开始匹配，匹配成功就更新计数器并且执行流表的指令，如果有Goto-table就会进入下一级流表</li><li>如果匹配失败则根据流表项table-miss执行丢弃数据包，将数据包给另一个流表，将数据包给控制器等操作。</li></ol><h4 id="OpenFlow组表"><a href="#OpenFlow组表" class="headerlink" title="OpenFlow组表"></a>OpenFlow组表</h4><p>OpenFlow组表的表项被流表项（Flow Entry）所引用，提供组播报文转发功能。</p><h3 id="安全通道"><a href="#安全通道" class="headerlink" title="安全通道"></a>安全通道</h3><p>用于连接设备和控制器。通过这个通道实现表项的下发，查询以及状态的上报等功能。</p><h3 id="OpenFlow消息类型"><a href="#OpenFlow消息类型" class="headerlink" title="OpenFlow消息类型"></a>OpenFlow消息类型</h3><h4 id="Controller-to-Switch消息"><a href="#Controller-to-Switch消息" class="headerlink" title="Controller to Switch消息"></a>Controller to Switch消息</h4><p>主要用于Controller对Switch进行状态查询和修改配置等管理操作，可能不需要交换机响应。</p><h4 id="异步（Asynchronous）消息"><a href="#异步（Asynchronous）消息" class="headerlink" title="异步（Asynchronous）消息"></a>异步（Asynchronous）消息</h4><p>Switch发送给Controller，，用来通知Switch上发生的某些异步事件的消息，主要包括Packet-in、Flow-Removed、Port-Status和Error等。例如，当某一条规则因为超时而被删除时，Switch将自动发送一条Flow-Removed消息通知Controller，以方便Controller作出相应的操作，如重新设置相关规则等。</p><h4 id="同步（Symmetric）消息"><a href="#同步（Symmetric）消息" class="headerlink" title="同步（Symmetric）消息"></a>同步（Symmetric）消息</h4><p>双向对称的消息，主要用来建立连接、检测对方是否在线等，是控制器和OpenFlow交换机都会在无请求情况下发送的消息，包括Hello、Echo和Experimenter三种消息</p><h2 id="控制代理模块"><a href="#控制代理模块" class="headerlink" title="控制代理模块"></a>控制代理模块</h2><p>例如OPENFLOW,将控制平面与数据平面相连。</p><p>可以实现对数据平面的适配以及上传一些信息如网络拓扑等资源给控制器。    </p><h1 id="SDN控制平面"><a href="#SDN控制平面" class="headerlink" title="SDN控制平面"></a>SDN控制平面</h1><p>控制器：向上能够执行应用的请求，向下能够控制一定数量的网络设备，东西向使得控制器能够使用一种分布式的策略部署。</p><ol><li><p>北向接口</p></li><li><p>应用</p></li><li><p>核心模块</p></li><li><p>东西向接口</p><p>分布式控制器架构</p></li><li><p>南向接口 </p></li></ol><h2 id="路由功能"><a href="#路由功能" class="headerlink" title="路由功能"></a>路由功能</h2><ol><li>收集有关的网络拓扑和流量等业务信息情况</li><li>通过网络设计路由</li></ol><h2 id="TTU-T-Y-3300"><a href="#TTU-T-Y-3300" class="headerlink" title="TTU-T Y 3300"></a>TTU-T Y 3300</h2><ol><li>为SDN应用程序提供API,以通过编程实现特定的网络行为</li><li>编排</li></ol><p>提供对网络资源的自动控制和管理，并协调应用程序层对网络资源的请求</p><ol><li>抽象（abstraction）</li></ol><p>与网络资源交互，并提供网络资源的抽象</p><ol><li>控制支持</li></ol><p>通过资源控制接口支持资源层功能的可编程性</p><ol><li>数据传输和处理</li></ol><p>提供数据转发和数据路由功能</p><h2 id="OpenDaylight"><a href="#OpenDaylight" class="headerlink" title="OpenDaylight"></a>OpenDaylight</h2><p>Linux基金会负责管理的开源项目，提供一套基于SDN开发的模块化、可扩展、可升级、支持多协议的控制器框架，目的是推动SDN技术的创新实施和透明化。</p><ol><li><p>南向接口支持OpenFlow、Netconf、SNMP、PCEP等标准协议，同时支持私有化接口;</p></li><li><p>业务抽象层（SAL）保证上下层模块之间调用可以相互隔离，屏蔽南向协议差异，为上层功能模块提供一致性服务;</p></li><li><p>采用OSGI体系结构，解决组件之间的隔离问题;</p></li><li>使用YANG工具直接生成业务管理的“骨架”;</li><li>OpenDaylight拥有一个开源的分布式数据网格平台，该平台不仅能实现数据的存储、查找和监听，更重要的是它使得OpenDaylight支持控制器集群。</li></ol><h3 id="基本网络服务功能"><a href="#基本网络服务功能" class="headerlink" title="基本网络服务功能"></a>基本网络服务功能</h3><ol><li>拓扑管理器</li></ol><p>通过订阅节点添加和删除及其互连的事件来学习网络布局的服务。需要网络视图的应用程序可以使用此服务</p><ol><li>统计管理器</li></ol><p>收集交换机相关的统计信息，包括流量统计信息、节点连接器和队列占用情况。</p><ol><li>交换机管理器</li></ol><p>保存数据平面设备的详细信息。</p><ol><li>转发规则管理器</li></ol><p>安装路由并跟踪下一跳信息。与交换机管理器和拓扑管理器一起注册和维护网络流状态。使用这种方法的应用程序不需要了解网络设备的具体情况。</p><ol><li>主机跟踪器</li></ol><p>跟踪和维护有关连接主机的信息。</p><h3 id="REST"><a href="#REST" class="headerlink" title="REST"></a>REST</h3><p>定义构建北向API</p><p>约束</p><ol><li><p>客户-服务器</p></li><li><p>无状态</p><p>请求或者响应必须包含所需要的所有信息。</p></li><li><p>缓存</p><p>将数据标为可缓存或者不可缓存，之后相同数据的请求就可以在客户端处理</p></li><li><p>统一接口</p></li><li><p>分层系统</p></li><li><p>按需编码</p></li></ol><h3 id="多控制器"><a href="#多控制器" class="headerlink" title="多控制器"></a>多控制器</h3><ol><li><p>失败恢复</p><p>增强了可靠性，交换机可以与多个控制器进行连接，与一个控制器连接失败后仍然可以在openflow模式下工作</p></li><li><p>负载均衡</p></li></ol><h2 id="BGP"><a href="#BGP" class="headerlink" title="BGP"></a>BGP</h2><ol><li>Neighbor acquisition</li></ol><p>交换邻居信息</p><ol><li>Neighbor reachability</li></ol><p>确保邻居还在</p><h1 id="SDN应用平面"><a href="#SDN应用平面" class="headerlink" title="SDN应用平面"></a>SDN应用平面</h1><p>基于控制器提供的API,实现和网络业务有关的管理，安全等应用，还能根据用户需求定制其他网络业务。</p><h2 id="网络服务抽象层"><a href="#网络服务抽象层" class="headerlink" title="网络服务抽象层"></a>网络服务抽象层</h2><p>它将高级请求转换为执行请求所需的低级命令，里面有网络抽象代表了网络实体的基本属性，已经封装完成，不必要对详细操作进行编程。</p><p>就大概是大的功能被转化成小的模块来实现的意思。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;hr&gt;
+&lt;h1 id=&quot;SDN&quot;&gt;&lt;a href=&quot;#SDN&quot; class=&quot;headerlink&quot; title=&quot;SDN&quot;&gt;&lt;/a&gt;SDN&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;网络开放可编程&lt;/li&gt;
+&lt;li&gt;数控分离&lt;/li&gt;
+&lt;li&gt;逻辑上集中控制&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;传统</summary>
+      
+    
+    
+    
+    <category term="计算机网络" scheme="http://example.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+    
+    <category term="计算机网络" scheme="http://example.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>IPv6 wireshark抓包</title>
+    <link href="http://example.com/2021/01/08/IPv6-wireshark%E6%8A%93%E5%8C%85/"/>
+    <id>http://example.com/2021/01/08/IPv6-wireshark%E6%8A%93%E5%8C%85/</id>
+    <published>2021-01-08T13:40:10.000Z</published>
+    <updated>2021-01-10T11:35:26.135Z</updated>
+    
+    <content type="html"><![CDATA[<hr><h1 id="DNS"><a href="#DNS" class="headerlink" title="DNS"></a>DNS</h1><script type="math/tex; mode=display">ping \ www.baidu.com</script><p><img src="/2021/01/08/IPv6-wireshark%E6%8A%93%E5%8C%85/Users\WIN10\AppData\Roaming\Typora\typora-user-images\image-20210108220506817.png" alt="image-20210108220506817"></p><p>可以看到$ping\ www.baidu.com$,有两个dns的查询和响应，一个是IPv4一个是IPv6的，原因是因为校园网是双协议栈的并且没有禁用IPv4。</p><p>$dns$功能：</p><p>将一个网址解析成IPv6地址，向DNS服务器发送请求报文以及收取响应报文，和IPv4的$dns$大同小异。</p><p>$dns$报文分析：</p><ol><li><p><img src="/2021/01/08/IPv6-wireshark%E6%8A%93%E5%8C%85/Users\WIN10\AppData\Roaming\Typora\typora-user-images\image-20210108221044836.png" alt="image-20210108221044836"></p></li></ol><p>这里是标识数，标志，问题数，权威RR数，附加RR数，回答RR数</p><ol><li><p><img src="/2021/01/08/IPv6-wireshark%E6%8A%93%E5%8C%85/Users\WIN10\AppData\Roaming\Typora\typora-user-images\image-20210108221307011.png" alt="image-20210108221307011"></p></li></ol><p>跳数限制：规定跳数，跳数为0时候就丢弃报文。</p><p>目的地址是dns的服务器</p><p>dns是运行在UDP上的，使用53号端口</p><ol><li><p><img src="/2021/01/08/IPv6-wireshark%E6%8A%93%E5%8C%85/Users\WIN10\AppData\Roaming\Typora\typora-user-images\image-20210108221958735.png" alt="image-20210108221958735"></p></li></ol><h1 id="IP包组成分析"><a href="#IP包组成分析" class="headerlink" title="IP包组成分析"></a>IP包组成分析</h1><p>观察一个ICMPv6的报文。</p><p><img src="/2021/01/08/IPv6-wireshark%E6%8A%93%E5%8C%85/Users\WIN10\AppData\Roaming\Typora\typora-user-images\image-20210108223019308.png" alt="image-20210108223019308"></p><p><img src="/2021/01/08/IPv6-wireshark%E6%8A%93%E5%8C%85/Users\WIN10\AppData\Roaming\Typora\typora-user-images\image-20210108224031019.png" alt="image-20210108224031019"></p><p>与IPv4的区别：</p><ol><li><p>首先是协议号表示使用的是IPv6，接着是源地址以及目的地址，可以看到IPv6没有首部字段，首部的长度变成了固定的40字节。</p></li><li><p>取消了total长度，取而代之的是荷载长度$Payload\ Length$</p></li><li><p>没有了标识，标志，片偏移，这些功能都在扩展首部之中</p></li><li><p>跳数限制$Hop\ Limit$代替了$TTL$</p></li><li><p>取消了协议字段，采用了下一个首部$Next\ Header$00</p></li></ol><p>各字段：</p><ul><li>版本指明协议版本，IPv6该字段为6。</li><li>通信量类 占8位，区别不同的IPv6数据报的类别或优先级。</li><li>有效载荷长度占16位，指明IPv6数据报除基本首部以外的字节数(所有扩展首部都算在有效载荷之内)。</li><li>下一个首部 占8位，相当于IPv4的协议字段或可选字段。当IPv6数据报没有扩展首部时，下一个首部字段的作用是指出了基本首部后面的数据应交付给IP上面的哪一个高层协议。当出现扩展首部时，下一个首部字段的值就标识后面第一个扩展首部的类型。</li><li>跳数限制占8位。用来防止数据报在网络中无限期地存在。源点在每个数据报发出时即设定某个跳数限制，每个路由器在转发数据报时，要先将跳数限制字段中的值减1。当跳数限制的值为零时，就要丢弃这个数据报。</li><li>源地址 占128位。是数据报的发送端的IP地址。</li><li>目的地址 占128位，是数据报的接收端的IP地址。</li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;hr&gt;
+&lt;h1 id=&quot;DNS&quot;&gt;&lt;a href=&quot;#DNS&quot; class=&quot;headerlink&quot; title=&quot;DNS&quot;&gt;&lt;/a&gt;DNS&lt;/h1&gt;&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+ping \ www.baidu.com&lt;/scr</summary>
+      
+    
+    
+    
+    <category term="计算机网络" scheme="http://example.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+    
+    <category term="计算机网络" scheme="http://example.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
+  
+  <entry>
     <title>数值计算复习</title>
     <link href="http://example.com/2021/01/07/%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97%E5%A4%8D%E4%B9%A0/"/>
     <id>http://example.com/2021/01/07/%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97%E5%A4%8D%E4%B9%A0/</id>
     <published>2021-01-07T14:52:09.000Z</published>
-    <updated>2021-01-07T15:00:54.495Z</updated>
+    <updated>2021-01-10T06:51:23.380Z</updated>
     
-    <content type="html"><![CDATA[<hr><h1 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h1><p>误差</p><p>有效位数</p>]]></content>
+    <content type="html"><![CDATA[<hr><h1 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h1><p>误差</p><p>有效位数</p><h1 id="第二章解方程"><a href="#第二章解方程" class="headerlink" title="第二章解方程"></a>第二章解方程</h1><h2 id="二分法"><a href="#二分法" class="headerlink" title="二分法"></a>二分法</h2><h2 id="不动点"><a href="#不动点" class="headerlink" title="不动点"></a>不动点</h2><script type="math/tex; mode=display">g(r)=r</script><h2 id="牛顿法"><a href="#牛顿法" class="headerlink" title="牛顿法"></a>牛顿法</h2><p>导数，切线</p><h2 id="割线法"><a href="#割线法" class="headerlink" title="割线法"></a>割线法</h2><h1 id="第三章解方程组"><a href="#第三章解方程组" class="headerlink" title="第三章解方程组"></a>第三章解方程组</h1><h2 id="高斯消元法"><a href="#高斯消元法" class="headerlink" title="高斯消元法"></a>高斯消元法</h2><p>消元过后矩阵就变成了一个上三角矩阵。</p><h2 id="LU分解"><a href="#LU分解" class="headerlink" title="LU分解"></a>LU分解</h2><p>解决</p><script type="math/tex; mode=display">Ax=b</script><p>将A变成一个下三角矩阵L和上三角矩阵U</p><script type="math/tex; mode=display">Ax=LUx=b</script><h2 id="部分选主元分解法"><a href="#部分选主元分解法" class="headerlink" title="部分选主元分解法"></a>部分选主元分解法</h2><h2 id="线性方程组误差分析"><a href="#线性方程组误差分析" class="headerlink" title="线性方程组误差分析"></a>线性方程组误差分析</h2><p>范数，相对误差，绝对误差</p><h2 id="迭代法"><a href="#迭代法" class="headerlink" title="迭代法"></a>迭代法</h2><h3 id="Jocobi法"><a href="#Jocobi法" class="headerlink" title="Jocobi法"></a>Jocobi法</h3><h3 id="Gauss-Seidel法和SOR"><a href="#Gauss-Seidel法和SOR" class="headerlink" title="Gauss-Seidel法和SOR"></a>Gauss-Seidel法和SOR</h3><h2 id="正定矩阵的方程解法"><a href="#正定矩阵的方程解法" class="headerlink" title="正定矩阵的方程解法"></a>正定矩阵的方程解法</h2><h2 id="非线性方程组解法"><a href="#非线性方程组解法" class="headerlink" title="非线性方程组解法"></a>非线性方程组解法</h2><h3 id="Newton法"><a href="#Newton法" class="headerlink" title="Newton法"></a>Newton法</h3><h3 id="Broyden法"><a href="#Broyden法" class="headerlink" title="Broyden法"></a>Broyden法</h3><h1 id="第四章特征值和奇异值"><a href="#第四章特征值和奇异值" class="headerlink" title="第四章特征值和奇异值"></a>第四章特征值和奇异值</h1><h1 id="第五章最小二乘法"><a href="#第五章最小二乘法" class="headerlink" title="第五章最小二乘法"></a>第五章最小二乘法</h1><h1 id="第六章-插值"><a href="#第六章-插值" class="headerlink" title="第六章 插值"></a>第六章 插值</h1><h1 id="第七章数值微分与积分"><a href="#第七章数值微分与积分" class="headerlink" title="第七章数值微分与积分"></a>第七章数值微分与积分</h1>]]></content>
     
     
       
@@ -31,7 +113,7 @@
     <summary type="html">&lt;hr&gt;
 &lt;h1 id=&quot;第一章&quot;&gt;&lt;a href=&quot;#第一章&quot; class=&quot;headerlink&quot; title=&quot;第一章&quot;&gt;&lt;/a&gt;第一章&lt;/h1&gt;&lt;p&gt;误差&lt;/p&gt;
 &lt;p&gt;有效位数&lt;/p&gt;
-</summary>
+&lt;h1 id=&quot;第二章解方程&quot;&gt;&lt;a href=&quot;#第二章解方程&quot; class=&quot;h</summary>
       
     
     
@@ -483,92 +565,6 @@
     <category term="python" scheme="http://example.com/tags/python/"/>
     
     <category term="数据结构" scheme="http://example.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>关于考研2</title>
-    <link href="http://example.com/2020/11/24/%E5%85%B3%E4%BA%8E%E8%80%83%E7%A0%942/"/>
-    <id>http://example.com/2020/11/24/%E5%85%B3%E4%BA%8E%E8%80%83%E7%A0%942/</id>
-    <published>2020-11-24T05:16:33.000Z</published>
-    <updated>2020-11-24T05:30:43.101Z</updated>
-    
-    <content type="html"><![CDATA[<hr><p>几天前的话，回了家一趟，和我姐姐聊了一下，我姐姐现在大四，还有一个月就要考研初试了，她和我讲了很多关于考研的事情，我基本也是确定了之后就是要考研了。</p><hr><p>剑指2021 12月份~</p><hr><h3 id="时间安排"><a href="#时间安排" class="headerlink" title="时间安排"></a>时间安排</h3><h5 id="寒假前"><a href="#寒假前" class="headerlink" title="寒假前"></a>寒假前</h5><ol><li>先确定好自己要考研的院校</li><li>那些要考的专业科目开始看，但不是刷题很深地看，就是过一下，总结到blog，然后再自己敲代码去实现</li><li>开始背单词？好久没有学习英语了</li><li>还有这学期地课也不要落下了，开始准备复习</li></ol><h5 id="寒假后"><a href="#寒假后" class="headerlink" title="寒假后"></a>寒假后</h5><p>按照那个时间表跟着规划去做题，刷题，听课！</p><p>感觉就是和高考差不都，一轮复习，又一轮复习的</p><hr><h4 id="考研科目"><a href="#考研科目" class="headerlink" title="考研科目"></a>考研科目</h4><h5 id="英语"><a href="#英语" class="headerlink" title="英语"></a>英语</h5><p>100分</p><h5 id="数学"><a href="#数学" class="headerlink" title="数学"></a>数学</h5><p>150分</p><h6 id="政治"><a href="#政治" class="headerlink" title="政治"></a>政治</h6><p>100分 </p><h6 id="专业课："><a href="#专业课：" class="headerlink" title="专业课："></a>专业课：</h6><p>150分</p><p>数据结构45分，计算机组成原理45分，操作系统35分，计算机网络25分；</p><p>试卷题型结构：单项选择题，80分（40小题，每小题2分）；综合题，70分；</p><hr><p>加油~愿韶华不负</p><p>​                                                                      JAYSON</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;hr&gt;
-&lt;p&gt;几天前的话，回了家一趟，和我姐姐聊了一下，我姐姐现在大四，还有一个月就要考研初试了，她和我讲了很多关于考研的事情，我基本也是确定了之后就是要考研了。&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;剑指2021 12月份~&lt;/p&gt;
-&lt;hr&gt;
-&lt;h3 id=&quot;时间安排&quot;&gt;&lt;a href=&quot;</summary>
-      
-    
-    
-    
-    <category term="未来方向" scheme="http://example.com/categories/%E6%9C%AA%E6%9D%A5%E6%96%B9%E5%90%91/"/>
-    
-    
-    <category term="未来方向" scheme="http://example.com/tags/%E6%9C%AA%E6%9D%A5%E6%96%B9%E5%90%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>动态规划</title>
-    <link href="http://example.com/2020/11/24/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
-    <id>http://example.com/2020/11/24/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</id>
-    <published>2020-11-23T16:45:26.000Z</published>
-    <updated>2020-12-01T09:47:01.139Z</updated>
-    
-    <content type="html"><![CDATA[<hr><p>动态规划算法，一个感觉和递归很像的东西。</p><p>递归：自上到下，慢慢到底部，不会记录每个问题的结果，内存消耗相对小，但会冲股份计算相同的问题，耗时多。</p><p>动态规划：自下到上，会记录每一个问题的结果，内存消耗相对比较大，但不会计算相同的问题，时间消耗较小。</p><h4 id="动态规划解决问题的特点"><a href="#动态规划解决问题的特点" class="headerlink" title="动态规划解决问题的特点"></a>动态规划解决问题的特点</h4><ol><li>最优化：即一个问题的子问题的解也是最优的</li><li>无后效性：即一个状态与之后的决策无关，如找零钱问题amount[5]与amount[5+x]无关</li><li>有重叠子问题：子问题之间不是独立的，可能子问题之间存在子问题调用关系</li></ol><p>tips：有重叠子问题不是必要条件，但这是动态规划算法相比其他算法的优势</p><h4 id="动态规划算法步骤"><a href="#动态规划算法步骤" class="headerlink" title="动态规划算法步骤"></a>动态规划算法步骤</h4><ol><li>创建一个存放保存子问题状态的空间</li><li>找到每个状态之间的之间的关系</li><li>返回需要求的值</li></ol><h4 id="找零钱问题"><a href="#找零钱问题" class="headerlink" title="找零钱问题"></a>找零钱问题</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">coinChange</span>(<span class="params">self, coins, amount: <span class="built_in">int</span></span>) -&gt; int:</span></span><br><span class="line">        coins.sort()</span><br><span class="line">        dp=&#123;&#125;</span><br><span class="line">        dp[<span class="number">0</span>]=<span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,amount+<span class="number">1</span>):</span><br><span class="line">            dp[i]=amount+<span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,amount+<span class="number">1</span>):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> coins:</span><br><span class="line">                <span class="keyword">if</span> i&gt;=j:</span><br><span class="line">                    dp[i]=<span class="built_in">min</span>(dp[i],(dp[i-j]+<span class="number">1</span>))</span><br><span class="line">        <span class="keyword">if</span> dp[amount]&lt;amount:</span><br><span class="line">            <span class="keyword">return</span> dp[amount]</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">-1</span></span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;hr&gt;
-&lt;p&gt;动态规划算法，一个感觉和递归很像的东西。&lt;/p&gt;
-&lt;p&gt;递归：自上到下，慢慢到底部，不会记录每个问题的结果，内存消耗相对小，但会冲股份计算相同的问题，耗时多。&lt;/p&gt;
-&lt;p&gt;动态规划：自下到上，会记录每一个问题的结果，内存消耗相对比较大，但不会计算相同的问题，时间</summary>
-      
-    
-    
-    
-    <category term="算法" scheme="http://example.com/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-    <category term="python" scheme="http://example.com/tags/python/"/>
-    
-    <category term="算法" scheme="http://example.com/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>PCA降维以及图片重构</title>
-    <link href="http://example.com/2020/11/22/PCA%E9%99%8D%E7%BB%B4%E4%BB%A5%E5%8F%8A%E5%9B%BE%E7%89%87%E9%87%8D%E6%9E%84/"/>
-    <id>http://example.com/2020/11/22/PCA%E9%99%8D%E7%BB%B4%E4%BB%A5%E5%8F%8A%E5%9B%BE%E7%89%87%E9%87%8D%E6%9E%84/</id>
-    <published>2020-11-22T08:50:34.000Z</published>
-    <updated>2020-12-01T09:46:14.263Z</updated>
-    
-    <content type="html"><![CDATA[<hr><p>数值计算中有一个大作业是关于PCA的降维以及重构的，这里就总结一下，感觉还是蛮实用的。</p><h4 id="PCA概念"><a href="#PCA概念" class="headerlink" title="PCA概念"></a>PCA概念</h4><p>PCA即主成分分析方法，是一种使用最广泛的数据降维算法。PCA的主要思想是将n维特征映射到k维上，这k维是全新的正交特征也被称为主成分，是在原有n维特征的基础上重新构造出来的k维特征。</p><h4 id="PCA思想"><a href="#PCA思想" class="headerlink" title="PCA思想"></a>PCA思想</h4><ol><li>数据中的信息是分布不均匀的，有些地方数据多，有些地方数据少</li><li>所以将一些少的信息去掉，对于原始数据是没有很大影响的，即抓住主要矛盾，忽略次要矛盾</li><li>经过推导可以知道协方差矩阵的特征值代表了数据包含的信息量，所以可以取大的特征值，舍弃掉小的从而完成降维</li></ol><h4 id="PCA降维步骤"><a href="#PCA降维步骤" class="headerlink" title="PCA降维步骤"></a>PCA降维步骤</h4><ol><li>去平均值(即去中心化)，即每一位特征减去各自的平均值。</li><li>计算协方差矩阵$\frac{1}{n}XX^T$</li><li>求协方差矩阵$\frac{1}{n}XX^T$的特征值和特征向量</li><li>对特征值从大到小排序，选择其中最大的k个。然后将其对应的k个特征向量分别作为行向量组成特征向量矩阵P。</li><li>将数据转换到k个特征向量构建的新空间中，即Y=PX。</li></ol><h4 id="图像重构"><a href="#图像重构" class="headerlink" title="图像重构"></a>图像重构</h4><p>将上面的Y乘上P.T加上去中心化减去的值得到重构的图像</p><p>即：</p><script type="math/tex; mode=display">reconstruction=Y*P'+meanvalue</script><h3 id="实验过程"><a href="#实验过程" class="headerlink" title="实验过程"></a>实验过程</h3><ol><li>读取训练集图像，每一个人脸图像以一个列向量的形式存在，所以需要将每个图像重构成列向量</li></ol><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> <span class="built_in">j</span>=<span class="number">1</span>:img_num <span class="comment">%逐一读取图像</span></span><br><span class="line">    image_name = img_path_list(<span class="built_in">j</span>).name;<span class="comment">%图像名</span></span><br><span class="line">    img = imread(strcat(file_path,image_name));              </span><br><span class="line">    img = imresize(img, <span class="number">0.2</span>, <span class="string">&#x27;nearest&#x27;</span>);</span><br><span class="line">     [irow,icol] = <span class="built_in">size</span>(img);<span class="comment">%得到图片大小</span></span><br><span class="line">    temp = <span class="built_in">reshape</span>(img,irow*icol,<span class="number">1</span>);<span class="comment">%将二维图片转为一维向量</span></span><br><span class="line">    <span class="comment">% 每张图片的信息做为V的一列  </span></span><br><span class="line">    Q(:,<span class="built_in">j</span>)=temp;</span><br><span class="line">    imgTrain=[imgTrain,temp];</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure><ol><li>读取完人脸数据后，将数据零均值化，即人脸向量减去平均值脸向量。然后求出这组数据的协方差矩阵的特征值向量和特征值向量,这些单位特征向量可以形成一个特征空间，然后把原图像向量向这个特征空间中投影，就可以得到特征脸</li></ol><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">m = <span class="built_in">mean</span>(imgTrain,<span class="number">2</span>); <span class="comment">% 平均图像/行平均</span></span><br><span class="line">Train_Number = <span class="built_in">size</span>(imgTrain,<span class="number">2</span>);<span class="comment">%列数</span></span><br><span class="line"><span class="comment">%计算机每一张图片到均值图像的方差</span></span><br><span class="line">A = [];  </span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span> = <span class="number">1</span> : Train_Number<span class="comment">%对每一列</span></span><br><span class="line">    temp = double(imgTrain(:,<span class="built_in">i</span>))-m; <span class="comment">%每一张图与均值的差异</span></span><br><span class="line">    A = [A temp]; <span class="comment">%差矩阵</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="comment">%得到A的协方差矩阵并转置得到L</span></span><br><span class="line">L = A&#x27;*A; <span class="comment">% L是协方差矩阵C=A*A&#x27;的转置</span></span><br><span class="line"><span class="comment">%得到特征值与特征向量</span></span><br><span class="line">[V,D] = eig(L); <span class="comment">%对角线上的元素是L|C的特征值.V:以特征向量为列的满秩矩阵，D：特征值对角矩阵。即L*V = V*D.</span></span><br><span class="line">L_eig_vec = [];<span class="comment">%特征值向量</span></span><br><span class="line"><span class="built_in">max</span>=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span> = <span class="number">1</span> : <span class="built_in">size</span>(V,<span class="number">2</span>)<span class="comment">%对每个特征向量   </span></span><br><span class="line">   <span class="built_in">max</span>=<span class="built_in">max</span>+D(<span class="built_in">i</span>,<span class="built_in">i</span>);</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">sum=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span> = <span class="built_in">size</span>(V,<span class="number">2</span>):<span class="number">-1</span>:<span class="built_in">size</span>(V,<span class="number">2</span>)<span class="number">-2</span><span class="comment">%对每个特征向量      </span></span><br><span class="line">    L_eig_vec = [L_eig_vec V(:,<span class="built_in">i</span>)]*<span class="number">0</span>;<span class="comment">%集中对应的特征向量</span></span><br><span class="line">    sum=sum+D(<span class="built_in">i</span>,<span class="built_in">i</span>);</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span> = <span class="built_in">size</span>(V,<span class="number">2</span>)<span class="number">-3</span>:<span class="number">-1</span>:<span class="built_in">size</span>(V,<span class="number">2</span>)<span class="number">-9</span><span class="comment">%对每个特征向量      </span></span><br><span class="line">    L_eig_vec = [L_eig_vec V(:,<span class="built_in">i</span>)]*<span class="number">0.05</span>;<span class="comment">%集中对应的特征向量</span></span><br><span class="line">    sum=sum+D(<span class="built_in">i</span>,<span class="built_in">i</span>);</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span> = <span class="built_in">size</span>(V,<span class="number">2</span>)<span class="number">-10</span>:<span class="number">-1</span>:<span class="number">1</span><span class="comment">%对每个特征向量      </span></span><br><span class="line">    L_eig_vec = [L_eig_vec V(:,<span class="built_in">i</span>)];<span class="comment">%集中对应的特征向量</span></span><br><span class="line">    sum=sum+D(<span class="built_in">i</span>,<span class="built_in">i</span>);</span><br><span class="line">    <span class="keyword">if</span>(sum/<span class="built_in">max</span>&gt;<span class="number">0.99</span>)</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">Eigenfaces = A * L_eig_vec; <span class="comment">% 计算机协方差矩阵C的特征向量，</span></span><br><span class="line">                            <span class="comment">%得到降维了的特征,A为每一张图像与均值图像的差构成的矩阵，</span></span><br><span class="line">TrainProjectedImages = [];<span class="comment">%映射图像</span></span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span> = <span class="number">1</span> : img_num<span class="comment">%对于每一个训练特征</span></span><br><span class="line">    temp = Eigenfaces&#x27;*double(Q(:,<span class="built_in">i</span>));</span><br><span class="line">    TrainProjectedImages = [TrainProjectedImages temp];  <span class="comment">%得到 L_eig_vec;</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure><ol><li>人脸重建</li></ol><p>人脸重建实验的目的是为了测试特征脸所携带的人脸信息。由于特征值的大小代表了其所对应的特征向量所携带的信息量，通过将最大的一些特征值对应的特征向量叠加就可以获得原图像中的大部分信息量，也就是所谓的主成分。这里先将所有特征值按从大到小的顺序排列。通过叠加特征向量的方式，就可以得到一组对原人脸的逼近特征脸。而将特征值加起来，正是总的信息量，也可以求出重构误差。</p><ol><li>人脸识别</li></ol><p>人脸识别即给出一个待识别的在测试集中的图像，计算该图像与已经有的人脸即训练集中的人脸的距离，距离最小的则认为该图片的人脸。</p><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">1</span>:Testcols</span><br><span class="line">    mImgTestCur = TestProjectedImages(:,<span class="built_in">i</span>);</span><br><span class="line">    vDisMin = <span class="number">9999999999999</span>;</span><br><span class="line">    vClassMin = <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">for</span> <span class="built_in">j</span>=<span class="number">1</span>:Traincols</span><br><span class="line">        mImgTrainCur = TrainProjectedImages(:,<span class="built_in">j</span>);</span><br><span class="line">        mDis = mImgTestCur-mImgTrainCur;</span><br><span class="line">        mDis = mDis.^<span class="number">2</span>;</span><br><span class="line">        vDis = <span class="built_in">sqrt</span>(sum(mDis));</span><br><span class="line">        <span class="keyword">if</span> vDis&lt;vDisMin</span><br><span class="line">            vDisMin = vDis;</span><br><span class="line">    m=<span class="built_in">j</span>;</span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    name1=img_path_list_train(m).name;</span><br><span class="line">   name1 =name1(<span class="number">6</span>:<span class="number">7</span>);<span class="comment">%取名字的6-7位置的字符</span></span><br><span class="line">    name2=img_path_list_test(<span class="built_in">i</span>).name;</span><br><span class="line">     name2 =name2(<span class="number">6</span>:<span class="number">7</span>);</span><br><span class="line">    <span class="keyword">if</span> name2==name1</span><br><span class="line">count=count+<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">end</span></span><br></pre></td></tr></table></figure><hr><p>未完待续…</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;hr&gt;
-&lt;p&gt;数值计算中有一个大作业是关于PCA的降维以及重构的，这里就总结一下，感觉还是蛮实用的。&lt;/p&gt;
-&lt;h4 id=&quot;PCA概念&quot;&gt;&lt;a href=&quot;#PCA概念&quot; class=&quot;headerlink&quot; title=&quot;PCA概念&quot;&gt;&lt;/a&gt;PCA概念&lt;/h4&gt;&lt;p&gt;PC</summary>
-      
-    
-    
-    
-    <category term="算法" scheme="http://example.com/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-    <category term="matlab" scheme="http://example.com/tags/matlab/"/>
-    
-    <category term="算法" scheme="http://example.com/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   

@@ -1,0 +1,347 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SDN | Jayson</title><meta name="keywords" content="计算机网络"><meta name="author" content="jayson"><meta name="copyright" content="jayson"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="SDN 网络开放可编程 数控分离 逻辑上集中控制  传统是分布式的，而SDN是数控分离，分层的。  SDN应用\\ \downarrow _{北向接口}\\ 控制平面\\ \downarrow _{南向接口}\\ 数据平面SDN数据平面又叫做基础设施层。 模块组成 分组转发模块 Qos OAM 保护模块 接口业务适配模块 同步处理模块  OpenFlow通过将网络设备控制平面与数据平面分离开来，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SDN">
+<meta property="og:url" content="http://example.com/2021/01/09/SDN/index.html">
+<meta property="og:site_name" content="Jayson">
+<meta property="og:description" content="SDN 网络开放可编程 数控分离 逻辑上集中控制  传统是分布式的，而SDN是数控分离，分层的。  SDN应用\\ \downarrow _{北向接口}\\ 控制平面\\ \downarrow _{南向接口}\\ 数据平面SDN数据平面又叫做基础设施层。 模块组成 分组转发模块 Qos OAM 保护模块 接口业务适配模块 同步处理模块  OpenFlow通过将网络设备控制平面与数据平面分离开来，">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg">
+<meta property="article:published_time" content="2021-01-09T05:34:29.000Z">
+<meta property="article:modified_time" content="2021-01-09T17:33:19.653Z">
+<meta property="article:author" content="jayson">
+<meta property="article:tag" content="计算机网络">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2021/01/09/SDN/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  ClickShowText: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-01-10 01:33:19'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+   if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+  const autoChangeMode = 'false'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }const asideStatus = saveToLocal.get('aside-status')
+if (asideStatus !== undefined) {
+   if (asideStatus === 'hide') {
+     document.documentElement.classList.add('hide-aside')
+   } else {
+     document.documentElement.classList.remove('hide-aside')
+   }
+}})()</script><meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="Jayson" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/null" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">31</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">13</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">12</div></a></div></div></div><hr/></div></div><div id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Jayson</a></span><span id="menus"><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><h1 class="post-title">SDN</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2021-01-09T05:34:29.000Z" title="Created 2021-01-09 13:34:29">2021-01-09</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2021-01-09T17:33:19.653Z" title="Updated 2021-01-10 01:33:19">2021-01-10</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></span></div><div class="meta-secondline"> <span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><hr>
+<h1 id="SDN"><a href="#SDN" class="headerlink" title="SDN"></a>SDN</h1><ol>
+<li>网络开放可编程</li>
+<li>数控分离</li>
+<li>逻辑上集中控制</li>
+</ol>
+<p>传统是分布式的，而SDN是数控分离，分层的。</p>
+<script type="math/tex; mode=display">
+SDN应用\\
+\downarrow _{北向接口}\\
+控制平面\\
+\downarrow _{南向接口}\\
+数据平面</script><h1 id="SDN数据平面"><a href="#SDN数据平面" class="headerlink" title="SDN数据平面"></a>SDN数据平面</h1><p>又叫做<strong><em>基础设施层</em></strong>。</p>
+<h2 id="模块组成"><a href="#模块组成" class="headerlink" title="模块组成"></a>模块组成</h2><ol>
+<li>分组转发模块</li>
+<li>Qos</li>
+<li>OAM</li>
+<li>保护模块</li>
+<li>接口业务适配模块</li>
+<li>同步处理模块</li>
+</ol>
+<h2 id="OpenFlow"><a href="#OpenFlow" class="headerlink" title="OpenFlow"></a>OpenFlow</h2><p>通过将网络设备控制平面与数据平面分离开来，从而实现了网络流量的控制，并使得网络变得更加智能。</p>
+<p>是控制器和交换机之间的标准协议。</p>
+<h3 id="OpenFlow控制器"><a href="#OpenFlow控制器" class="headerlink" title="OpenFlow控制器"></a>OpenFlow控制器</h3><p>位于控制层。</p>
+<ol>
+<li>NOX/POX</li>
+<li>ONOS</li>
+<li>OpenDaylight</li>
+</ol>
+<h3 id="OpenFlow交换机"><a href="#OpenFlow交换机" class="headerlink" title="OpenFlow交换机"></a>OpenFlow交换机</h3><p>由多个流表和一个组表构成</p>
+<h4 id="流表项组成"><a href="#流表项组成" class="headerlink" title="流表项组成"></a>流表项组成</h4><p>包含多个流表项，如：</p>
+<ol>
+<li>匹配域（用来识别该条表项对应的flow）</li>
+<li>优先级（定义流表项的优先顺序）</li>
+<li>计数器（用于保存与条目相关统计信息）</li>
+<li>指令（匹配表项后需要对数据分组执行的动作）</li>
+<li>Timeouts</li>
+<li>cookies</li>
+<li>flags</li>
+</ol>
+<h4 id="流表处理流程"><a href="#流表处理流程" class="headerlink" title="流表处理流程"></a>流表处理流程</h4><p>数据包到达交换机后：</p>
+<ol>
+<li>从第一个流表开始匹配，匹配成功就更新计数器并且执行流表的指令，如果有Goto-table就会进入下一级流表</li>
+<li>如果匹配失败则根据流表项table-miss执行丢弃数据包，将数据包给另一个流表，将数据包给控制器等操作。</li>
+</ol>
+<h4 id="OpenFlow组表"><a href="#OpenFlow组表" class="headerlink" title="OpenFlow组表"></a>OpenFlow组表</h4><p>OpenFlow组表的表项被流表项（Flow Entry）所引用，提供组播报文转发功能。</p>
+<h3 id="安全通道"><a href="#安全通道" class="headerlink" title="安全通道"></a>安全通道</h3><p>用于连接设备和控制器。通过这个通道实现表项的下发，查询以及状态的上报等功能。</p>
+<h3 id="OpenFlow消息类型"><a href="#OpenFlow消息类型" class="headerlink" title="OpenFlow消息类型"></a>OpenFlow消息类型</h3><h4 id="Controller-to-Switch消息"><a href="#Controller-to-Switch消息" class="headerlink" title="Controller to Switch消息"></a>Controller to Switch消息</h4><p>主要用于Controller对Switch进行状态查询和修改配置等管理操作，可能不需要交换机响应。</p>
+<h4 id="异步（Asynchronous）消息"><a href="#异步（Asynchronous）消息" class="headerlink" title="异步（Asynchronous）消息"></a>异步（Asynchronous）消息</h4><p>Switch发送给Controller，，用来通知Switch上发生的某些异步事件的消息，主要包括Packet-in、Flow-Removed、Port-Status和Error等。例如，当某一条规则因为超时而被删除时，Switch将自动发送一条Flow-Removed消息通知Controller，以方便Controller作出相应的操作，如重新设置相关规则等。</p>
+<h4 id="同步（Symmetric）消息"><a href="#同步（Symmetric）消息" class="headerlink" title="同步（Symmetric）消息"></a>同步（Symmetric）消息</h4><p>双向对称的消息，主要用来建立连接、检测对方是否在线等，是控制器和OpenFlow交换机都会在无请求情况下发送的消息，包括Hello、Echo和Experimenter三种消息</p>
+<h2 id="控制代理模块"><a href="#控制代理模块" class="headerlink" title="控制代理模块"></a>控制代理模块</h2><p>例如OPENFLOW,将控制平面与数据平面相连。</p>
+<p>可以实现对数据平面的适配以及上传一些信息如网络拓扑等资源给控制器。    </p>
+<h1 id="SDN控制平面"><a href="#SDN控制平面" class="headerlink" title="SDN控制平面"></a>SDN控制平面</h1><p>控制器：向上能够执行应用的请求，向下能够控制一定数量的网络设备，东西向使得控制器能够使用一种分布式的策略部署。</p>
+<ol>
+<li><p>北向接口</p>
+</li>
+<li><p>应用</p>
+</li>
+<li><p>核心模块</p>
+</li>
+<li><p>东西向接口</p>
+<p>分布式控制器架构</p>
+</li>
+<li><p>南向接口 </p>
+</li>
+</ol>
+<h2 id="路由功能"><a href="#路由功能" class="headerlink" title="路由功能"></a>路由功能</h2><ol>
+<li>收集有关的网络拓扑和流量等业务信息情况</li>
+<li>通过网络设计路由</li>
+</ol>
+<h2 id="TTU-T-Y-3300"><a href="#TTU-T-Y-3300" class="headerlink" title="TTU-T Y 3300"></a>TTU-T Y 3300</h2><ol>
+<li>为SDN应用程序提供API,以通过编程实现特定的网络行为</li>
+<li>编排</li>
+</ol>
+<p>提供对网络资源的自动控制和管理，并协调应用程序层对网络资源的请求</p>
+<ol>
+<li>抽象（abstraction）</li>
+</ol>
+<p>与网络资源交互，并提供网络资源的抽象</p>
+<ol>
+<li>控制支持</li>
+</ol>
+<p>通过资源控制接口支持资源层功能的可编程性</p>
+<ol>
+<li>数据传输和处理</li>
+</ol>
+<p>提供数据转发和数据路由功能</p>
+<h2 id="OpenDaylight"><a href="#OpenDaylight" class="headerlink" title="OpenDaylight"></a>OpenDaylight</h2><p>Linux基金会负责管理的开源项目，提供一套基于SDN开发的模块化、可扩展、可升级、支持多协议的控制器框架，目的是推动SDN技术的创新实施和透明化。</p>
+<ol>
+<li><p>南向接口支持OpenFlow、Netconf、SNMP、PCEP等标准协议，同时支持私有化接口;</p>
+</li>
+<li><p>业务抽象层（SAL）保证上下层模块之间调用可以相互隔离，屏蔽南向协议差异，为上层功能模块提供一致性服务;</p>
+</li>
+<li><p>采用OSGI体系结构，解决组件之间的隔离问题;</p>
+</li>
+<li>使用YANG工具直接生成业务管理的“骨架”;</li>
+<li>OpenDaylight拥有一个开源的分布式数据网格平台，该平台不仅能实现数据的存储、查找和监听，更重要的是它使得OpenDaylight支持控制器集群。</li>
+</ol>
+<h3 id="基本网络服务功能"><a href="#基本网络服务功能" class="headerlink" title="基本网络服务功能"></a>基本网络服务功能</h3><ol>
+<li>拓扑管理器</li>
+</ol>
+<p>通过订阅节点添加和删除及其互连的事件来学习网络布局的服务。需要网络视图的应用程序可以使用此服务</p>
+<ol>
+<li>统计管理器</li>
+</ol>
+<p>收集交换机相关的统计信息，包括流量统计信息、节点连接器和队列占用情况。</p>
+<ol>
+<li>交换机管理器</li>
+</ol>
+<p>保存数据平面设备的详细信息。</p>
+<ol>
+<li>转发规则管理器</li>
+</ol>
+<p>安装路由并跟踪下一跳信息。与交换机管理器和拓扑管理器一起注册和维护网络流状态。使用这种方法的应用程序不需要了解网络设备的具体情况。</p>
+<ol>
+<li>主机跟踪器</li>
+</ol>
+<p>跟踪和维护有关连接主机的信息。</p>
+<h3 id="REST"><a href="#REST" class="headerlink" title="REST"></a>REST</h3><p>定义构建北向API</p>
+<p>约束</p>
+<ol>
+<li><p>客户-服务器</p>
+</li>
+<li><p>无状态</p>
+<p>请求或者响应必须包含所需要的所有信息。</p>
+</li>
+<li><p>缓存</p>
+<p>将数据标为可缓存或者不可缓存，之后相同数据的请求就可以在客户端处理</p>
+</li>
+<li><p>统一接口</p>
+</li>
+<li><p>分层系统</p>
+</li>
+<li><p>按需编码</p>
+</li>
+</ol>
+<h3 id="多控制器"><a href="#多控制器" class="headerlink" title="多控制器"></a>多控制器</h3><ol>
+<li><p>失败恢复</p>
+<p>增强了可靠性，交换机可以与多个控制器进行连接，与一个控制器连接失败后仍然可以在openflow模式下工作</p>
+</li>
+<li><p>负载均衡</p>
+</li>
+</ol>
+<h2 id="BGP"><a href="#BGP" class="headerlink" title="BGP"></a>BGP</h2><ol>
+<li>Neighbor acquisition</li>
+</ol>
+<p>交换邻居信息</p>
+<ol>
+<li>Neighbor reachability</li>
+</ol>
+<p>确保邻居还在</p>
+<h1 id="SDN应用平面"><a href="#SDN应用平面" class="headerlink" title="SDN应用平面"></a>SDN应用平面</h1><p>基于控制器提供的API,实现和网络业务有关的管理，安全等应用，还能根据用户需求定制其他网络业务。</p>
+<h2 id="网络服务抽象层"><a href="#网络服务抽象层" class="headerlink" title="网络服务抽象层"></a>网络服务抽象层</h2><p>它将高级请求转换为执行请求所需的低级命令，里面有网络抽象代表了网络实体的基本属性，已经封装完成，不必要对详细操作进行编程。</p>
+<p>就大概是大的功能被转化成小的模块来实现的意思。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">jayson</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://example.com/2021/01/09/SDN/">http://example.com/2021/01/09/SDN/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2021/01/10/NFV/"><img class="prev-cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">NFV</div></div></a></div><div class="next-post pull-right"><a href="/2021/01/08/IPv6-wireshark%E6%8A%93%E5%8C%85/"><img class="next-cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">IPv6 wireshark抓包</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> Related Articles</span></div><div class="relatedPosts-list"><div><a href="/2020/12/12/计算机网络/" title="计算机网络"><img class="cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-12-12</div><div class="title">计算机网络</div></div></a></div><div><a href="/2021/01/01/计网2复习/" title="计网2复习"><img class="cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-01-01</div><div class="title">计网2复习</div></div></a></div><div><a href="/2021/01/10/NFV/" title="NFV"><img class="cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-01-10</div><div class="title">NFV</div></div></a></div><div><a href="/2021/01/08/IPv6-wireshark抓包/" title="IPv6 wireshark抓包"><img class="cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-01-08</div><div class="title">IPv6 wireshark抓包</div></div></a></div></div></div></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" src="/null" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">jayson</div><div class="author-info__description">这里是一个要考研的大三程序狗的博客，喜欢跳舞，饶舌音乐，健身，在这里会记录自己的生活以及学习</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">31</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">13</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">12</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div></div><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="card-content"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#SDN"><span class="toc-number">1.</span> <span class="toc-text">SDN</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#SDN%E6%95%B0%E6%8D%AE%E5%B9%B3%E9%9D%A2"><span class="toc-number">2.</span> <span class="toc-text">SDN数据平面</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A8%A1%E5%9D%97%E7%BB%84%E6%88%90"><span class="toc-number">2.1.</span> <span class="toc-text">模块组成</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#OpenFlow"><span class="toc-number">2.2.</span> <span class="toc-text">OpenFlow</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#OpenFlow%E6%8E%A7%E5%88%B6%E5%99%A8"><span class="toc-number">2.2.1.</span> <span class="toc-text">OpenFlow控制器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#OpenFlow%E4%BA%A4%E6%8D%A2%E6%9C%BA"><span class="toc-number">2.2.2.</span> <span class="toc-text">OpenFlow交换机</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B5%81%E8%A1%A8%E9%A1%B9%E7%BB%84%E6%88%90"><span class="toc-number">2.2.2.1.</span> <span class="toc-text">流表项组成</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B5%81%E8%A1%A8%E5%A4%84%E7%90%86%E6%B5%81%E7%A8%8B"><span class="toc-number">2.2.2.2.</span> <span class="toc-text">流表处理流程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#OpenFlow%E7%BB%84%E8%A1%A8"><span class="toc-number">2.2.2.3.</span> <span class="toc-text">OpenFlow组表</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E9%80%9A%E9%81%93"><span class="toc-number">2.2.3.</span> <span class="toc-text">安全通道</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#OpenFlow%E6%B6%88%E6%81%AF%E7%B1%BB%E5%9E%8B"><span class="toc-number">2.2.4.</span> <span class="toc-text">OpenFlow消息类型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Controller-to-Switch%E6%B6%88%E6%81%AF"><span class="toc-number">2.2.4.1.</span> <span class="toc-text">Controller to Switch消息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%82%E6%AD%A5%EF%BC%88Asynchronous%EF%BC%89%E6%B6%88%E6%81%AF"><span class="toc-number">2.2.4.2.</span> <span class="toc-text">异步（Asynchronous）消息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%90%8C%E6%AD%A5%EF%BC%88Symmetric%EF%BC%89%E6%B6%88%E6%81%AF"><span class="toc-number">2.2.4.3.</span> <span class="toc-text">同步（Symmetric）消息</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%A7%E5%88%B6%E4%BB%A3%E7%90%86%E6%A8%A1%E5%9D%97"><span class="toc-number">2.3.</span> <span class="toc-text">控制代理模块</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#SDN%E6%8E%A7%E5%88%B6%E5%B9%B3%E9%9D%A2"><span class="toc-number">3.</span> <span class="toc-text">SDN控制平面</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B7%AF%E7%94%B1%E5%8A%9F%E8%83%BD"><span class="toc-number">3.1.</span> <span class="toc-text">路由功能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TTU-T-Y-3300"><span class="toc-number">3.2.</span> <span class="toc-text">TTU-T Y 3300</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#OpenDaylight"><span class="toc-number">3.3.</span> <span class="toc-text">OpenDaylight</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E7%BD%91%E7%BB%9C%E6%9C%8D%E5%8A%A1%E5%8A%9F%E8%83%BD"><span class="toc-number">3.3.1.</span> <span class="toc-text">基本网络服务功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#REST"><span class="toc-number">3.3.2.</span> <span class="toc-text">REST</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E6%8E%A7%E5%88%B6%E5%99%A8"><span class="toc-number">3.3.3.</span> <span class="toc-text">多控制器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BGP"><span class="toc-number">3.4.</span> <span class="toc-text">BGP</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#SDN%E5%BA%94%E7%94%A8%E5%B9%B3%E9%9D%A2"><span class="toc-number">4.</span> <span class="toc-text">SDN应用平面</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E6%9C%8D%E5%8A%A1%E6%8A%BD%E8%B1%A1%E5%B1%82"><span class="toc-number">4.1.</span> <span class="toc-text">网络服务抽象层</span></a></li></ol></li></ol></div></div></div><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/01/10/NFV/" title="NFV"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="NFV"/></a><div class="content"><a class="title" href="/2021/01/10/NFV/" title="NFV">NFV</a><time datetime="2021-01-09T17:33:38.000Z" title="Created 2021-01-10 01:33:38">2021-01-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/01/09/SDN/" title="SDN"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="SDN"/></a><div class="content"><a class="title" href="/2021/01/09/SDN/" title="SDN">SDN</a><time datetime="2021-01-09T05:34:29.000Z" title="Created 2021-01-09 13:34:29">2021-01-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/01/08/IPv6-wireshark%E6%8A%93%E5%8C%85/" title="IPv6 wireshark抓包"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="IPv6 wireshark抓包"/></a><div class="content"><a class="title" href="/2021/01/08/IPv6-wireshark%E6%8A%93%E5%8C%85/" title="IPv6 wireshark抓包">IPv6 wireshark抓包</a><time datetime="2021-01-08T13:40:10.000Z" title="Created 2021-01-08 21:40:10">2021-01-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/01/07/%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97%E5%A4%8D%E4%B9%A0/" title="数值计算复习"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数值计算复习"/></a><div class="content"><a class="title" href="/2021/01/07/%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97%E5%A4%8D%E4%B9%A0/" title="数值计算复习">数值计算复习</a><time datetime="2021-01-07T14:52:09.000Z" title="Created 2021-01-07 22:52:09">2021-01-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/01/03/%E5%AF%86%E7%A0%81%E5%AD%A6%E5%A4%8D%E4%B9%A0/" title="密码学复习"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="密码学复习"/></a><div class="content"><a class="title" href="/2021/01/03/%E5%AF%86%E7%A0%81%E5%AD%A6%E5%A4%8D%E4%B9%A0/" title="密码学复习">密码学复习</a><time datetime="2021-01-02T16:53:31.000Z" title="Created 2021-01-03 00:53:31">2021-01-03</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By jayson</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    loader: {
+      source: {
+        '[tex]/amsCd': '[tex]/amscd'
+      }
+    },
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        addClass: [200,() => {
+          document.querySelectorAll('mjx-container:not([display=\'true\']').forEach( node => {
+            const target = node.parentNode
+            if (!target.classList.contains('has-jax')) {
+              target.classList.add('mathjax-overflow')
+            }
+          })
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></div></body></html>
